@@ -1,17 +1,6 @@
-// Normalization
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-// Base
 html {
   height: 100%;
 }
-
 body {
   height: 100%;
   box-sizing: border-box;
