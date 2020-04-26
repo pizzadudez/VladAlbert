@@ -1,12 +1,39 @@
 <template>
-  <div>Vlad Albert</div>
+  <div id="content">
+    <main>
+      <hero></hero>
+      <projects></projects>
+      <skills></skills>
+    </main>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Hero from '@/components/sections/Hero.vue';
+import Projects from '@/components/sections/Projects.vue';
+import Skills from '@/components/sections/Skills.vue';
 
 export default {
-  name: "Home",
-  components: {}
+  components: { Hero, Projects, Skills },
 };
 </script>
+
+<style scoped lang="scss">
+#content {
+  min-height: 100vh;
+
+  // REMOVE: test
+  color: black;
+  main {
+    padding: 0 200px;
+    section {
+      max-width: 1000px;
+      padding: 150px 0;
+      margin: 0px auto;
+    }
+    section:first-of-type {
+      min-height: 100vh;
+    }
+  }
+}
+</style>
