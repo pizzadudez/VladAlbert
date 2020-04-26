@@ -39,8 +39,8 @@ export default {
 
 <style lang="scss" scoped>
 .side {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 65%;
   left: -88px;
   transform: translateY(-50%);
 

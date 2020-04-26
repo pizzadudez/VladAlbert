@@ -1,38 +1,55 @@
 <template>
   <div id="app">
-    <SideMenu></SideMenu>
+    <navbar></navbar>
+    <side-menu></side-menu>
+    <div id="content">
+      <main>
+        <hero></hero>
+        <hero></hero>
+        <hero></hero>
+      </main>
+    </div>
+    <footer>Footer</footer>
+
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>-->
-    <router-view />
+    </div>
+    <router-view />-->
   </div>
 </template>
 
 <script>
 import SideMenu from "@/components/SideMenu.vue";
+import Navbar from "@/components/Navbar.vue";
+import Hero from "@/components/sections/Hero.vue";
+
 export default {
-  components: { SideMenu }
+  components: { SideMenu, Navbar, Hero }
 };
 </script>
 
 <style lang="scss">
-#app {
-  position: relative;
-  min-height: 100%;
-  padding: 1rem;
-}
+#content {
+  min-height: 100vh;
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  // REMOVE: test
+  color: black;
+  main {
+    padding: 0 200px;
+    section {
+      max-width: 1000px;
+      padding: 150px 0;
+      margin: 0px auto;
+      min-height: 500px; //test
+    }
+    section:first-of-type {
+      min-height: 100vh;
     }
   }
+}
+footer {
+  min-height: 100px;
+  background-color: $color-test-1;
 }
 </style>
