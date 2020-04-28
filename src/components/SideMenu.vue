@@ -51,7 +51,7 @@ export default {
   &__item {
     a {
       display: flex;
-      background-color: $color-test-1;
+      background-color: $bg-color-secondary;
       text-decoration: none;
       color: white;
       padding: 8px;

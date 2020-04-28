@@ -1,15 +1,21 @@
 <template>
   <div :class="{ hidden: hidden }" class="navbar">
     <ul>
-      <li><a href="" v-scroll-to="'#hero'">Hero</a></li>
-      <li><a href="" v-scroll-to="'#skills'">Skills</a></li>
-      <li><a href="" v-scroll-to="'#projects'">Projects</a></li>
+      <li>
+        <a href v-scroll-to="'#hero'">Hero</a>
+      </li>
+      <li>
+        <a href v-scroll-to="'#skills'">Skills</a>
+      </li>
+      <li>
+        <a href v-scroll-to="'#projects'">Projects</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import throttle from 'lodash.throttle';
+import throttle from "lodash.throttle";
 
 // const revealHeight = 100; // Show navbar only when hero is not visible
 
@@ -18,7 +24,7 @@ export default {
     return {
       hidden: true,
       lastScrollY: 0,
-      scrollDirectionTop: false,
+      scrollDirectionTop: false
     };
   },
   methods: {
@@ -36,11 +42,11 @@ export default {
         this.hidden = true;
       }
       this.lastScrollY = scrollY;
-    },
+    }
   },
   created() {
-    window.addEventListener('scroll', throttle(this.handleScroll, 100));
-  },
+    window.addEventListener("scroll", throttle(this.handleScroll, 100));
+  }
 };
 </script>
 
@@ -51,7 +57,7 @@ export default {
   justify-content: center;
   position: fixed;
   top: 0;
-  background-color: $color-test-2;
+  background-color: $bg-color-secondary;
 
   height: 60px;
 

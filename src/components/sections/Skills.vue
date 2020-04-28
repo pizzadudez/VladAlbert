@@ -17,7 +17,7 @@ export default {};
 
 <style scoped lang="scss">
 section {
-  background-color: $color-test-2;
+  background-color: $bg-color-secondary;
   min-height: 200vh;
   text-align: center;
   font-size: 2.5rem;

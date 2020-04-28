@@ -9,21 +9,18 @@
 </template>
 
 <script>
-import Hero from '@/components/sections/Hero.vue';
-import Projects from '@/components/sections/Projects.vue';
-import Skills from '@/components/sections/Skills.vue';
+import Hero from "@/components/sections/Hero.vue";
+import Projects from "@/components/sections/Projects.vue";
+import Skills from "@/components/sections/Skills.vue";
 
 export default {
-  components: { Hero, Projects, Skills },
+  components: { Hero, Projects, Skills }
 };
 </script>
 
 <style scoped lang="scss">
 #content {
   min-height: 100vh;
-
-  // REMOVE: test
-  color: black;
   main {
     padding: 0 200px;
     section {

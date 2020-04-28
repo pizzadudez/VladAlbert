@@ -1,25 +1,29 @@
 <template>
   <section id="projects">
-    <h1>Vlad Albert</h1>
-    <h2>webdev</h2>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
+    <template v-for="(project, idx) in projects">
+      <project :project="project" :key="idx"></project>
+    </template>
   </section>
 </template>
 
 <script>
-export default {};
+import data from "../../content/projects.json";
+import Project from "../Project";
+
+export default {
+  components: { Project },
+  data() {
+    return {
+      projects: data.projects
+    };
+  }
+};
 </script>
 
 <style scoped lang="scss">
 section {
-  background-color: $color-test-1;
-  min-height: 200vh;
-  text-align: center;
-  font-size: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 16px;
 }
 </style>

@@ -8,17 +8,17 @@
 </template>
 
 <script>
-import SideMenu from '@/components/SideMenu.vue';
-import Navbar from '@/components/Navbar.vue';
+import SideMenu from "@/components/SideMenu.vue";
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-  components: { SideMenu, Navbar },
+  components: { SideMenu, Navbar }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 footer {
   min-height: 100px;
-  background-color: $color-test-1;
+  background-color: $bg-color-footer;
 }
 </style>

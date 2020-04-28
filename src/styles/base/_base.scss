@@ -5,6 +5,25 @@ body {
   height: 100%;
   box-sizing: border-box;
 
-  background: $color-primary;
-  color: $color-text-test;
+  background: $bg-color-primary;
+  color: $text-lightGray;
+
+  svg {
+    fill: $text-lightGray;
+  }
+}
+
+// Scroll
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: grey;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(37, 33, 21);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: $bg-color-secondary;
 }
