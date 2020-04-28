@@ -20,6 +20,5 @@ section {
   background-color: $bg-color-secondary;
   min-height: 200vh;
   text-align: center;
-  font-size: 2.5rem;
 }
 </style>

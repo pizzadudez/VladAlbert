@@ -57,14 +57,14 @@ export default {
   justify-content: center;
   position: fixed;
   top: 0;
-  background-color: $bg-color-secondary;
-
+  background-color: $bg-color-primary;
+  box-shadow: $box-shadow;
   height: 60px;
-
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
   ul {
     display: flex;
+    align-items: center;
     list-style: none;
     li {
       margin: 0 20px;
@@ -77,5 +77,6 @@ export default {
 }
 .navbar.hidden {
   transform: translateY(-100%);
+  box-shadow: none;
 }
 </style>

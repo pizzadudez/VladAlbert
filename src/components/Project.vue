@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <header>
-      <h1>{{project.name}}</h1>
+      <h2>{{project.name}}</h2>
       <div class="project__description">
         <p>{{project.description}}</p>
       </div>
@@ -26,7 +26,7 @@ export default {
 .project {
   @include PaperContainer;
   background-color: $bg-color-secondary;
-  padding: 0.7rem;
+  padding: 1.1rem;
   &__description {
     margin-bottom: 10px;
   }
@@ -37,9 +37,9 @@ export default {
     grid-auto-columns: max-content;
     gap: 8px;
     li {
-      border: 1px solid black;
-      border-radius: 6px;
-      background-color: grey;
+      color: $text-gray;
+      /* border: 1px solid black;
+      border-radius: 6px; */
       padding: 0 4px;
     }
   }
