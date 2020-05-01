@@ -1,0 +1,48 @@
+{
+  "featured": [
+    {
+      "name": "MoodMusic",
+      "cover": "demo.png",
+      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "TradinGUI",
+      "cover": "demo.png",
+      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project title",
+      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    }
+  ]
+}

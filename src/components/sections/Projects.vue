@@ -1,27 +1,39 @@
 <template>
   <section id="projects">
-    <template v-for="(project, idx) in projects">
-      <project :project="project" :key="idx"></project>
-    </template>
+    <div class="featured">
+      <template v-for="(project, idx) in featured">
+        <featured-project :project="project" :key="idx"></featured-project>
+      </template>
+    </div>
+    <div class="projects">
+      <template v-for="(project, idx) in projects">
+        <project :project="project" :key="idx"></project>
+      </template>
+    </div>
   </section>
 </template>
 
 <script>
-import data from "../../content/projects.json";
+import { projects, featured } from "../../content";
+import FeaturedProject from "../FeaturedProject";
 import Project from "../Project";
 
 export default {
-  components: { Project },
+  components: { Project, FeaturedProject },
   data() {
     return {
-      projects: data.projects
+      projects,
+      featured
     };
   }
 };
 </script>
 
 <style scoped lang="scss">
-section {
+.featured {
+  margin-bottom: 150px;
+}
+.projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 16px;

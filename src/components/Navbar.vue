@@ -57,6 +57,7 @@ export default {
   justify-content: center;
   position: fixed;
   top: 0;
+  z-index: 10;
   background-color: $bg-color-primary;
   box-shadow: $box-shadow;
   height: 60px;

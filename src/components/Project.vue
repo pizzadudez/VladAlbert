@@ -25,22 +25,24 @@ export default {
 <style scoped lang="scss">
 .project {
   @include PaperContainer;
-  background-color: $bg-color-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1.1rem;
   &__description {
     margin-bottom: 10px;
   }
   ul {
+    margin-top: 10px;
     list-style: none;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     li {
       color: $text-gray;
-      /* border: 1px solid black;
-      border-radius: 6px; */
-      padding: 0 4px;
+      font-size: 0.9rem;
+      margin: 4px 12px 0 0;
+      white-space: nowrap;
     }
   }
 }

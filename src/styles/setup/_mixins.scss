@@ -1,4 +1,6 @@
 @mixin PaperContainer {
   box-shadow: $box-shadow;
   border-radius: 3px;
+  padding: 0.9rem;
+  background-color: $bg-color-secondary;
 }
