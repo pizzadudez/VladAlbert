@@ -2,14 +2,21 @@
   "featured": [
     {
       "name": "MoodMusic",
-      "cover": "demo.png",
+      "cover": "moodmusic.png",
       "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
       "tech": ["React", "Node", "Sass", "some api"],
       "github": "https://github.com/pizzadudez/VladAlbert"
     },
     {
       "name": "TradinGUI",
-      "cover": "demo.png",
+      "cover": "tradingui.png",
+      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "MyAH",
+      "cover": "myah.png",
       "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
       "tech": ["React", "Node", "Sass", "some api"],
       "github": "https://github.com/pizzadudez/VladAlbert"

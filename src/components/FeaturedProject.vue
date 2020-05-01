@@ -7,7 +7,7 @@
         <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
       </ul>
     </div>
-    <a class="featured__cover">
+    <a :href="project.github" target="_blank" class="featured__cover">
       <div>
         <img :src="require('@/content/projects/' + project.cover)" />
       </div>
@@ -30,9 +30,10 @@ export default {
   align-items: center;
   gap: 6px;
   &__cover {
+    position: relative;
     grid-column: 6 / -1;
     grid-row: 1 / -1;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     border-radius: 4px;
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
@@ -40,14 +41,38 @@ export default {
 
     /* min-height: 100%; */
     height: 100%;
+    &:hover,
+    &:focus {
+      &:before {
+        background: transparent;
+      }
+      img {
+        filter: none;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 1;
+      background-color: rgba(221, 189, 100, 0.13);
+      transition: background-color 0.4s;
+    }
 
     div {
-      width: auto;
+      z-index: 2;
+      /* width: auto; */
       height: 100%;
-      object-fit: cover;
+      /* object-fit: cover; */
 
       /* width: 100%;
       height: 100%; */
+
       img {
         display: block;
         height: 100%;
@@ -57,6 +82,13 @@ export default {
         /* position: absolute;
         top: 0;
         left: 0; */
+        filter: grayscale(70%) contrast(1) brightness(80%);
+        transition: filter 0.4s;
+        z-index: 3;
+        &:hover,
+        &:focus {
+          filter: none;
+        }
       }
     }
   }
@@ -80,6 +112,22 @@ export default {
   }
   &__description {
     @include PaperContainer;
+  }
+}
+.inverse {
+  .featured {
+    &__cover {
+      grid-column: 1 / 8;
+    }
+    &__info-container {
+      grid-column: 7 / -1;
+      h2 {
+        text-align: right;
+      }
+      ul {
+        justify-content: flex-end;
+      }
+    }
   }
 }
 </style>

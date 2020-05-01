@@ -2,7 +2,7 @@
   <section id="projects">
     <div class="featured">
       <template v-for="(project, idx) in featured">
-        <featured-project :project="project" :key="idx"></featured-project>
+        <featured-project :class="{inverse: idx % 2 == 1}" :project="project" :key="idx"></featured-project>
       </template>
     </div>
     <div class="projects">
