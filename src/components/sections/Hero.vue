@@ -63,11 +63,10 @@ section {
     font-size: 4rem;
     color: $text-white;
   }
-  .description {
+  .description p {
     margin-top: 1.8rem;
     max-width: 600px;
     font-size: 1.5rem;
-    color: $text-lightGray;
   }
   .nav {
     margin-top: 2rem;

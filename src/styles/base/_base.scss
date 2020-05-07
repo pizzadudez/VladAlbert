@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: $text-color;
   margin-bottom: 1rem;
 }
@@ -22,6 +22,63 @@ h2 {
   font-size: 1.6rem;
   color: $text-white;
   margin-bottom: 1rem;
+}
+p {
+  font-size: 1.2rem;
+  color: $text-lightGray;
+  margin: 1rem 0;
+}
+
+// Headers
+.left-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 250px;
+    background-color: $text-color;
+    margin-right: 12px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 250px;
+    background-color: $text-color;
+    margin-left: 12px;
+  }
+}
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 350px;
+    background-color: $text-color;
+    margin-right: 12px;
+  }
+}
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 350px;
+    background-color: $text-color;
+    margin-left: 12px;
+  }
 }
 
 // Scroll

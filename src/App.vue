@@ -3,7 +3,7 @@
     <navbar></navbar>
     <side-menu></side-menu>
     <router-view></router-view>
-    <footer>Footer</footer>
+    <footer></footer>
   </div>
 </template>
 

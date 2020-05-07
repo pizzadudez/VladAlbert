@@ -1,5 +1,6 @@
 <template>
   <section id="projects">
+    <h1 class="left-right">My projects</h1>
     <div class="featured">
       <template v-for="(project, idx) in featured">
         <featured-project :class="{inverse: idx % 2 == 1}" :project="project" :key="idx"></featured-project>
@@ -30,6 +31,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h1 {
+  margin-bottom: 5rem;
+}
 .featured {
   margin-bottom: 150px;
 }
