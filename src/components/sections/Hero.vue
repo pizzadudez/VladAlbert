@@ -15,18 +15,38 @@
       <nav-button>Contact</nav-button>
       <nav-button>Resume</nav-button>
     </div>
+    <transition name="fade">
+      <scroll-arrows v-if="showScrollArrows" v-scroll-to="'#about'"></scroll-arrows>
+    </transition>
   </section>
 </template>
 
 <script>
 import NavButton from "../NavButton";
+import ScrollArrows from "../ScrollArrows";
+
 export default {
-  components: { NavButton }
+  components: { NavButton, ScrollArrows },
+  data() {
+    return {
+      showScrollArrows: true
+    };
+  },
+  methods: {
+    hideScrollArrows: function() {
+      this.showScrollArrows = false;
+      window.removeEventListener("scroll", this.hideScrollArrows);
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.hideScrollArrows);
+  }
 };
 </script>
 
 <style scoped lang="scss">
 section {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,5 +76,11 @@ section {
       margin-right: 18px;
     }
   }
+}
+.fade-leave-active {
+  transition: opacity 1.5s;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

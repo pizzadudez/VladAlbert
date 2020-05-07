@@ -2,8 +2,8 @@
   <div id="content">
     <main>
       <hero></hero>
+      <about></about>
       <projects></projects>
-      <skills></skills>
     </main>
   </div>
 </template>
@@ -11,10 +11,10 @@
 <script>
 import Hero from "@/components/sections/Hero.vue";
 import Projects from "@/components/sections/Projects.vue";
-import Skills from "@/components/sections/Skills.vue";
+import About from "@/components/sections/About.vue";
 
 export default {
-  components: { Hero, Projects, Skills }
+  components: { Hero, Projects, About }
 };
 </script>
 

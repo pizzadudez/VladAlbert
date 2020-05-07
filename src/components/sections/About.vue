@@ -1,5 +1,5 @@
 <template>
-  <section id="skills">
+  <section id="about">
     <h1>Skills</h1>
     <h2>webdev</h2>
     <p>Lorem ipsum</p>
@@ -17,8 +17,7 @@ export default {};
 
 <style scoped lang="scss">
 section {
-  background-color: $bg-color-secondary;
-  min-height: 200vh;
+  min-height: 100vh;
   text-align: center;
 }
 </style>

@@ -2,10 +2,10 @@
   <div :class="{ hidden: hidden }" class="navbar">
     <ul>
       <li>
-        <a href v-scroll-to="'#hero'">Hero</a>
+        <a href v-scroll-to="'#hero'">Home</a>
       </li>
       <li>
-        <a href v-scroll-to="'#skills'">Skills</a>
+        <a href v-scroll-to="'#about'">About</a>
       </li>
       <li>
         <a href v-scroll-to="'#projects'">Projects</a>
@@ -72,6 +72,13 @@ export default {
       font-size: 1.8rem;
       a {
         text-decoration: none;
+        color: $text-color;
+        transition: all 0.3s ease;
+        &:hover,
+        &:focus,
+        &:active {
+          color: lighten($text-color, 30%);
+        }
       }
     }
   }
