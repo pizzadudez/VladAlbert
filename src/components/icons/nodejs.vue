@@ -8,6 +8,7 @@
     version="1.1"
     preserveAspectRatio="xMidYMid"
   >
+    <title>Node.js</title>
     <defs>
       <linearGradient
         x1="68.1884411%"

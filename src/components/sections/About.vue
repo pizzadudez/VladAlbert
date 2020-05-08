@@ -8,15 +8,15 @@
     <div class="stack">
       <h1 class="right">Tech stack</h1>
       <div>
-        <dynamic-icon name="html5"></dynamic-icon>
-        <dynamic-icon name="css3"></dynamic-icon>
-        <dynamic-icon name="sass"></dynamic-icon>
-        <dynamic-icon name="javascript"></dynamic-icon>
         <dynamic-icon name="react"></dynamic-icon>
-        <dynamic-icon name="vue"></dynamic-icon>
+        <dynamic-icon name="javascript"></dynamic-icon>
         <dynamic-icon name="nodejs"></dynamic-icon>
+        <dynamic-icon name="vue"></dynamic-icon>
         <dynamic-icon name="python"></dynamic-icon>
         <dynamic-icon name="django"></dynamic-icon>
+        <dynamic-icon name="sass"></dynamic-icon>
+        <dynamic-icon name="css3"></dynamic-icon>
+        <dynamic-icon name="html5"></dynamic-icon>
         <dynamic-icon name="postgres"></dynamic-icon>
         <dynamic-icon name="mysql"></dynamic-icon>
       </div>
@@ -34,7 +34,7 @@ export default {
 <style scoped lang="scss">
 section {
   display: grid;
-  grid-template-columns: minmax(400px, 650px) minmax(200px, 300px);
+  grid-template-columns: minmax(400px, 500px) minmax(200px, 400px);
   column-gap: 50px;
 }
 .stack {
@@ -42,12 +42,17 @@ section {
   > div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   svg {
-    min-width: 50px;
-    min-height: 50px;
-    max-width: 90px;
-    max-height: 90px;
+    display: block;
+    padding: 20px;
+    width: 130px;
+    height: 130px;
+    transition: all 0.4s $transition-bounce;
+    &:hover {
+      padding: 0;
+    }
   }
 }
 </style>

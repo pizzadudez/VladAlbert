@@ -8,6 +8,7 @@
     version="1.1"
     preserveAspectRatio="xMidYMid"
   >
+    <title>Vue</title>
     <g>
       <path
         d="M204.8,0 L256,0 L128,220.8 L0,0 L50.56,0 L97.92,0 L128,51.2 L157.44,0 L204.8,0 Z"
