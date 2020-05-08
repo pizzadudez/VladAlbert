@@ -5,14 +5,30 @@
       <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
       <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
     </div>
-    <div class="skills">
+    <div class="stack">
       <h1 class="right">Tech stack</h1>
+      <div>
+        <dynamic-icon name="html5"></dynamic-icon>
+        <dynamic-icon name="css3"></dynamic-icon>
+        <dynamic-icon name="sass"></dynamic-icon>
+        <dynamic-icon name="javascript"></dynamic-icon>
+        <dynamic-icon name="react"></dynamic-icon>
+        <dynamic-icon name="vue"></dynamic-icon>
+        <dynamic-icon name="nodejs"></dynamic-icon>
+        <dynamic-icon name="python"></dynamic-icon>
+        <dynamic-icon name="django"></dynamic-icon>
+        <dynamic-icon name="postgres"></dynamic-icon>
+        <dynamic-icon name="mysql"></dynamic-icon>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+import { DynamicIcon } from "../icons";
+export default {
+  components: { DynamicIcon }
+};
 </script>
 
 <style scoped lang="scss">
@@ -21,12 +37,17 @@ section {
   grid-template-columns: minmax(400px, 650px) minmax(200px, 300px);
   column-gap: 50px;
 }
-.skills {
+.stack {
   margin-top: 80px;
-  h1 {
-    text-align: end;
+  > div {
+    display: flex;
+    flex-wrap: wrap;
   }
-}
-.about {
+  svg {
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 90px;
+    max-height: 90px;
+  }
 }
 </style>

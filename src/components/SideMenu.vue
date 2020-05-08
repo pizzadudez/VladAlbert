@@ -1,28 +1,28 @@
 <template>
   <div class="side">
-    <ul class="side__list">
-      <li class="side__item">
+    <ul>
+      <li>
         <a href="https://www.vladalbert.com/" target="_blank">
           <span>Github</span>
           <dynamic-icon name="github"></dynamic-icon>
         </a>
       </li>
-      <li class="side__item">
+      <li>
         <a href="https://www.vladalbert.com/" target="_blank">
           <span>Linkedin</span>
           <dynamic-icon name="linkedin"></dynamic-icon>
         </a>
       </li>
-      <li class="side__item">
+      <li>
         <a href="https://www.vladalbert.com/" target="_blank">
-          <span>Github</span>
-          <dynamic-icon name="github"></dynamic-icon>
+          <span>E-mail</span>
+          <dynamic-icon name="mail"></dynamic-icon>
         </a>
       </li>
-      <li class="side__item">
+      <li>
         <a href="https://www.vladalbert.com/" target="_blank">
-          <span>Linkedin</span>
-          <dynamic-icon name="linkedin"></dynamic-icon>
+          <span>Resume</span>
+          <dynamic-icon name="resume"></dynamic-icon>
         </a>
       </li>
     </ul>
@@ -41,16 +41,15 @@ export default {
 .side {
   position: fixed;
   top: 65%;
-  left: -88px;
+  left: -98px;
   transform: translateY(-50%);
 
-  &__list {
+  ul {
     list-style: none;
-  }
-
-  &__item {
     a {
+      box-shadow: $box-shadow;
       display: flex;
+      align-items: center;
       background-color: $bg-color-secondary;
       text-decoration: none;
       color: white;
@@ -59,20 +58,19 @@ export default {
       &:hover,
       &:focus,
       &:active {
-        transform: translateX(80px);
+        transform: translateX(90px);
       }
 
       span {
         display: inline-block;
-        width: 80px;
+        width: 90px;
         margin-right: 8px;
         text-align: right;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
       svg {
-        /* display: block; */
-        width: 26px;
-        height: 26px;
+        width: 34px;
+        height: 34px;
       }
     }
   }
