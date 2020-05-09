@@ -12,7 +12,7 @@
     <div class="nav">
       <nav-button v-scroll-to="'#about'">About</nav-button>
       <nav-button v-scroll-to="'#projects'">Projects</nav-button>
-      <nav-button>Contact</nav-button>
+      <nav-button @click.native="openSideMenu()">Contact</nav-button>
       <nav-button>Resume</nav-button>
     </div>
     <transition name="fade">
@@ -36,6 +36,9 @@ export default {
     hideScrollArrows: function() {
       this.showScrollArrows = false;
       window.removeEventListener("scroll", this.hideScrollArrows);
+    },
+    openSideMenu: function() {
+      this.$root.$emit("open-side-menu");
     }
   },
   created() {

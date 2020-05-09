@@ -1,6 +1,6 @@
 <template>
   <div class="side">
-    <ul>
+    <ul :class="{emphasize: emphasize}">
       <li>
         <a href="https://www.vladalbert.com/" target="_blank">
           <span>Github</span>
@@ -33,7 +33,25 @@
 import { DynamicIcon } from "./icons";
 
 export default {
-  components: { DynamicIcon }
+  components: { DynamicIcon },
+  data() {
+    return {
+      emphasize: false
+    };
+  },
+  methods: {
+    animate: function() {
+      this.emphasize = true;
+    }
+  },
+  created() {
+    this.$root.$on("open-side-menu", () => {
+      this.emphasize = true;
+      setTimeout(() => {
+        this.emphasize = false;
+      }, 5000);
+    });
+  }
 };
 </script>
 
@@ -60,7 +78,6 @@ export default {
       &:active {
         transform: translateX(90px);
       }
-
       span {
         display: inline-block;
         width: 90px;
@@ -73,6 +90,42 @@ export default {
         height: 34px;
       }
     }
+    &.emphasize {
+      a {
+        &:hover,
+        &:active,
+        &:focus {
+          transform: none;
+        }
+      }
+      li {
+        animation: open 4s;
+      }
+      li:nth-of-type(2) {
+        animation-delay: 0.1s;
+      }
+      li:nth-of-type(3) {
+        animation-delay: 0.2s;
+      }
+      li:nth-of-type(4) {
+        animation-delay: 0.3s;
+      }
+    }
+  }
+}
+
+@keyframes open {
+  0% {
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(90px);
+  }
+  95% {
+    transform: translateX(90px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 </style>
