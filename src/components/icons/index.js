@@ -3,6 +3,9 @@ export { default as linkedin } from './linkedin';
 export { default as mail } from './mail';
 export { default as resume } from './resume';
 
+export { default as repo } from './repo';
+export { default as hosted } from './hosted';
+
 export { default as nodejs } from './nodejs';
 export { default as react } from './react';
 export { default as vue } from './vue';

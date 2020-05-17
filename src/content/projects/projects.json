@@ -12,7 +12,8 @@
       "cover": "tradingui.png",
       "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
       "tech": ["React", "Node", "Sass", "some api"],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "github": "https://github.com/pizzadudez/VladAlbert",
+      "hosted": "https://www.tradingui.vladalbert.com"
     },
     {
       "name": "MyAH",
@@ -27,6 +28,93 @@
       "name": "Project title",
       "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
       "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "MyAH data parser",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title is too long test how it works",
+      "description": "Project description",
+      "tech": ["React", "Node", "Sass", "some api"],
+      "github": "https://github.com/pizzadudez/VladAlbert",
+      "hosted": "https://tradingui.vladalbert.com"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
+      "github": "https://github.com/pizzadudez/VladAlbert"
+    },
+    {
+      "name": "Project title",
+      "description": "Project description",
+      "tech": [
+        "React",
+        "Node",
+        "Sass",
+        "some api",
+        "Next.js",
+        "someLongLibraryName.js",
+        "node",
+        "graphQL",
+        "C#"
+      ],
       "github": "https://github.com/pizzadudez/VladAlbert"
     },
     {

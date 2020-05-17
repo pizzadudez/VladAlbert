@@ -39,11 +39,6 @@ export default {
       emphasize: false
     };
   },
-  methods: {
-    animate: function() {
-      this.emphasize = true;
-    }
-  },
   created() {
     this.$root.$on("open-side-menu", () => {
       this.emphasize = true;

@@ -9,7 +9,10 @@ body {
   color: $text-lightGray;
 
   svg {
+    display: block;
     fill: $text-white;
+    width: 24px;
+    height: 24px;
   }
 }
 

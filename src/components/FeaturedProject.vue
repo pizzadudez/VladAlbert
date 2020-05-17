@@ -1,13 +1,23 @@
 <template>
   <div class="featured">
     <div class="featured__info-container">
-      <h2>{{project.name}}</h2>
+      <div class="featured__header">
+        <h2>{{project.name}}</h2>
+        <div class="featured__links">
+          <a v-if="project.github" :href="project.github" target="_blank">
+            <dynamic-icon name="github"></dynamic-icon>
+          </a>
+          <a v-if="project.hosted" :href="project.hosted" target="_blank">
+            <dynamic-icon name="hosted"></dynamic-icon>
+          </a>
+        </div>
+      </div>
       <div class="featured__description">{{project.description}}</div>
       <ul>
         <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
       </ul>
     </div>
-    <a :href="project.github" target="_blank" class="featured__cover">
+    <a class="featured__cover" :href="project.github" target="_blank">
       <div>
         <img :src="require('@/content/projects/' + project.cover)" />
       </div>
@@ -16,7 +26,10 @@
 </template>
 
 <script>
+import { DynamicIcon } from "./icons";
+
 export default {
+  components: { DynamicIcon },
   props: {
     project: Object
   }
@@ -48,6 +61,7 @@ export default {
       }
       img {
         filter: none;
+        transform: scale(1.01);
       }
     }
     &:before {
@@ -83,7 +97,7 @@ export default {
         top: 0;
         left: 0; */
         filter: grayscale(70%) contrast(1) brightness(80%);
-        transition: filter 0.4s;
+        transition: all 0.3s;
         z-index: 3;
         &:hover,
         &:focus {
@@ -113,6 +127,32 @@ export default {
   &__description {
     @include PaperContainer;
   }
+  &__header {
+    display: flex;
+    margin-bottom: 12px;
+    text-align: center;
+    align-items: center;
+    h2 {
+      margin: 0;
+    }
+  }
+  &__links {
+    display: flex;
+    margin: 0 20px;
+    a {
+      svg {
+        margin: 0 6px;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        svg {
+          fill: $text-color;
+        }
+      }
+    }
+  }
 }
 .inverse {
   .featured {
@@ -127,6 +167,9 @@ export default {
       ul {
         justify-content: flex-end;
       }
+    }
+    &__header {
+      flex-direction: row-reverse;
     }
   }
 }
