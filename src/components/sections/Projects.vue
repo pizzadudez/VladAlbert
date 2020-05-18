@@ -6,6 +6,7 @@
         <featured-project :class="{inverse: idx % 2 == 1}" :project="project" :key="idx"></featured-project>
       </template>
     </div>
+    <h2>Other projects worth mentioning:</h2>
     <div class="projects">
       <template v-for="(project, idx) in projects">
         <project :project="project" :key="idx"></project>
@@ -33,6 +34,11 @@ export default {
 <style scoped lang="scss">
 h1 {
   margin-bottom: 5rem;
+}
+h2 {
+  font-size: 2.4rem;
+  color: $text-gray;
+  margin-bottom: 3rem;
 }
 .featured {
   margin-bottom: 150px;

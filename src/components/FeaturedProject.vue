@@ -134,6 +134,7 @@ export default {
     align-items: center;
     h2 {
       margin: 0;
+      font-size: 2.4rem;
     }
   }
   &__links {
@@ -141,6 +142,8 @@ export default {
     margin: 0 20px;
     a {
       svg {
+        width: 1.9rem;
+        height: 1.9rem;
         margin: 0 6px;
         transition: all 0.2s ease-in-out;
       }

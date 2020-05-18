@@ -4,6 +4,7 @@
       <hero></hero>
       <about></about>
       <projects></projects>
+      <contact></contact>
     </main>
   </div>
 </template>
@@ -12,9 +13,10 @@
 import Hero from "@/components/sections/Hero.vue";
 import Projects from "@/components/sections/Projects.vue";
 import About from "@/components/sections/About.vue";
+import Contact from "@/components/sections/Contact.vue";
 
 export default {
-  components: { Hero, Projects, About }
+  components: { Hero, Projects, About, Contact }
 };
 </script>
 

@@ -4,6 +4,7 @@
       <h1 class="left">About me</h1>
       <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
       <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
+      <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
     </div>
     <div class="stack">
       <h1 class="right">Tech stack</h1>
@@ -37,8 +38,10 @@ section {
   grid-template-columns: minmax(400px, 500px) minmax(200px, 400px);
   column-gap: 50px;
 }
+.about {
+  margin-top: 70px;
+}
 .stack {
-  margin-top: 80px;
   > div {
     display: flex;
     flex-wrap: wrap;
