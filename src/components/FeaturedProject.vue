@@ -12,7 +12,9 @@
           </a>
         </div>
       </div>
-      <div class="featured__description">{{project.description}}</div>
+      <div class="featured__description">
+        <p>{{project.description}}</p>
+      </div>
       <ul>
         <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
       </ul>
@@ -126,6 +128,10 @@ export default {
   }
   &__description {
     @include PaperContainer;
+    p {
+      margin: 0;
+      padding: 2px;
+    }
   }
   &__header {
     display: flex;

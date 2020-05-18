@@ -3,141 +3,80 @@
     {
       "name": "MoodMusic",
       "cover": "moodmusic.png",
-      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
-      "tech": ["React", "Node", "Sass", "some api"],
+      "description": "Allows the user to add custom genre, subgenre or mood tags to individual tracks, rate songs and easily visualize all playlists a track is part of. Create custom playlists based on filtering or manually adding and reordering tracks. Perfect for people that have medium to large music libraries and like to easily keep their favorite playlists up to date.",
+      "tech": ["React", "Redux", "Node", "Spotify API", "MaterialUI"],
       "github": "https://github.com/pizzadudez/VladAlbert"
     },
     {
       "name": "TradinGUI",
       "cover": "tradingui.png",
-      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
-      "tech": ["React", "Node", "Sass", "some api"],
+      "description": "Business oriented web app that facilitates easier trading of in-game commodities. Comes with intuitive trading UI/UX and a plethora of statistics and detailed information. Django-rest-framework, reactjs, redux, styled-components.",
+      "tech": ["React", "Redux", "Django REST", "styled-components"],
       "github": "https://github.com/pizzadudez/VladAlbert",
       "hosted": "https://www.tradingui.vladalbert.com"
     },
     {
       "name": "MyAH",
       "cover": "myah.png",
-      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
-      "tech": ["React", "Node", "Sass", "some api"],
+      "description": "My hub for everything related to WoW's auction house. A replacement for https://theunderminejournal.com which isn't suited for large multi-server based auction house operations and does not provide detailed enough information and predictions.",
+      "tech": ["Django", "SQL", "Materialize CSS"],
       "github": "https://github.com/pizzadudez/VladAlbert"
     }
   ],
   "projects": [
     {
-      "name": "Project title",
-      "description": "Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on The Verge.",
-      "tech": ["React", "Node", "Sass", "some api"],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "name": "RealmHop",
+      "description": "Webapp for handling moving between different realms in the game World of Warcraft",
+      "tech": ["React", "Node.js", "Python", "SQLite"],
+      "github": "https://github.com/pizzadudez/"
     },
     {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "name": "Vlad Albert Portfolio",
+      "description": "I made this portfolio to showcase my work and to learn Vue.",
+      "tech": ["Vue", "Sass", "Javascript"],
+      "github": "https://github.com/pizzadudez/"
+    },
+    {
+      "name": "Food Panda Scraper",
+      "description": "Webscraper built to extract restaurant information (especially menu items).",
+      "tech": ["Python", "Scrapinghub", "Javascript", "Lua", "MySQL"],
+      "github": "https://github.com/pizzadudez/"
+    },
+    {
+      "name": "HKN Tool",
+      "description": "Python package that generates custom scripts for HotKeyNet(Keyclone software)",
+      "tech": ["Python", "HotKeyNet", "SQLite", "Selenium"],
+      "github": "https://github.com/pizzadudez/"
+    },
+    {
+      "name": "Routes Manager",
+      "description": "An extension to one of the most popular open world farming addons in World of Warcraft",
+      "tech": ["Lua", "Ace3"],
+      "github": "https://github.com/pizzadudez/"
     },
     {
       "name": "MyAH data parser",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "description": "Background Task / Worker made to provide up to date data for MyAH using Blizzard's Auction House API",
+      "tech": ["Python", "Blizzard API", "SQL"],
+      "github": "https://github.com/pizzadudez/"
     },
     {
-      "name": "Project title is too long test how it works",
-      "description": "Project description",
-      "tech": ["React", "Node", "Sass", "some api"],
-      "github": "https://github.com/pizzadudez/VladAlbert",
-      "hosted": "https://tradingui.vladalbert.com"
+      "name": "World of Warcraft Addons",
+      "description": "Several addons created to provide vital features or enhance aspects for multiboxing in World of Warcraft",
+      "tech": ["Lua", "Ace3"],
+      "github": "https://github.com/pizzadudez/"
     },
     {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "name": "Multiboxing Scripts",
+      "description": "Data parsing, analysis and implementing two way data transfer between local .lua files and local/remote databases",
+      "tech": ["Python", "Pandas", "SQL"],
+      "github": "https://github.com/pizzadudez/"
     },
     {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
-    },
-    {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
-    },
-    {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": [
-        "React",
-        "Node",
-        "Sass",
-        "some api",
-        "Next.js",
-        "someLongLibraryName.js",
-        "node",
-        "graphQL",
-        "C#"
-      ],
-      "github": "https://github.com/pizzadudez/VladAlbert"
-    },
-    {
-      "name": "Project title",
-      "description": "Project description",
-      "tech": ["React", "Node", "Sass", "some api"],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "name": "Monumente Brasov",
+      "description": "Website I designed and made for a client. Learned how to use Bootstrap and some JQuery.",
+      "tech": ["HTML", "CSS", "JQuery", "Bootstrap"],
+      "github": "https://github.com/pizzadudez/"
     }
   ]
 }

@@ -1,7 +1,10 @@
 <template>
   <div class="project">
     <div class="project__content">
-      <h2>{{project.name}}</h2>
+      <div class="project__title">
+        <dynamic-icon name="repo"></dynamic-icon>
+        <h2>{{project.name}}</h2>
+      </div>
       <ul class="project__tech-list">
         <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
       </ul>
@@ -40,6 +43,7 @@ export default {
   position: relative;
   padding: 1.1rem;
   overflow: hidden;
+  min-height: 200px;
 
   &:hover &__overlay {
     opacity: 1;
@@ -53,8 +57,21 @@ export default {
     justify-content: space-between;
     transition: all 0.2s;
   }
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 0;
+    }
+    svg {
+      margin-right: 8px;
+      fill: $text-color;
+      height: 2.8rem;
+      width: 2.8rem;
+    }
+  }
   &__tech-list {
-    margin-top: 10px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +84,7 @@ export default {
     }
   }
   &__description {
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
   &__overlay {
     position: absolute;
