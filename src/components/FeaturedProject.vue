@@ -7,6 +7,9 @@
           <a v-if="project.github" :href="project.github" target="_blank">
             <dynamic-icon name="github"></dynamic-icon>
           </a>
+          <a v-if="project.readme" :href="project.readme" target="_blank">
+            <dynamic-icon name="readme"></dynamic-icon>
+          </a>
           <a v-if="project.hosted" :href="project.hosted" target="_blank">
             <dynamic-icon name="hosted"></dynamic-icon>
           </a>

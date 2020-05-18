@@ -5,6 +5,7 @@ export { default as resume } from './resume';
 
 export { default as repo } from './repo';
 export { default as hosted } from './hosted';
+export { default as readme } from './readme';
 
 export { default as nodejs } from './nodejs';
 export { default as react } from './react';
