@@ -7,9 +7,9 @@
           <a v-if="project.github" :href="project.github" target="_blank">
             <dynamic-icon name="github"></dynamic-icon>
           </a>
-          <a v-if="project.readme" :href="project.readme" target="_blank">
+          <open-modal v-if="project.readme" :file="project.readme">
             <dynamic-icon name="readme"></dynamic-icon>
-          </a>
+          </open-modal>
           <a v-if="project.hosted" :href="project.hosted" target="_blank">
             <dynamic-icon name="hosted"></dynamic-icon>
           </a>
@@ -32,9 +32,10 @@
 
 <script>
 import { DynamicIcon } from "./icons";
+import OpenModal from "./OpenModal";
 
 export default {
-  components: { DynamicIcon },
+  components: { DynamicIcon, OpenModal },
   props: {
     project: Object
   }
@@ -149,7 +150,8 @@ export default {
   &__links {
     display: flex;
     margin: 0 20px;
-    a {
+    a,
+    button {
       svg {
         width: 1.9rem;
         height: 1.9rem;

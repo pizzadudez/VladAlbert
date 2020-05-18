@@ -38,7 +38,7 @@ export default {
       window.removeEventListener("scroll", this.hideScrollArrows);
     },
     openSideMenu: function() {
-      this.$root.$emit("open-side-menu");
+      this.$root.$emit("OPEN_SIDE_MENU");
     }
   },
   created() {

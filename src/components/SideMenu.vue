@@ -40,7 +40,7 @@ export default {
     };
   },
   created() {
-    this.$root.$on("open-side-menu", () => {
+    this.$root.$on("OPEN_SIDE_MENU", () => {
       this.emphasize = true;
       setTimeout(() => {
         this.emphasize = false;

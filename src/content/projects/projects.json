@@ -8,7 +8,7 @@
       "github": "https://github.com/pizzadudez/VladAlbert",
 
       "hosted": "https://www.tradingui.vladalbert.com",
-      "readme": "test"
+      "readme": "readme1.md"
     },
     {
       "name": "TradinGUI",
@@ -23,7 +23,8 @@
       "cover": "myah.png",
       "description": "My hub for everything related to WoW's auction house. A replacement for https://theunderminejournal.com which isn't suited for large multi-server based auction house operations and does not provide detailed enough information and predictions.",
       "tech": ["Django", "SQL", "Materialize CSS"],
-      "github": "https://github.com/pizzadudez/VladAlbert"
+      "github": "https://github.com/pizzadudez/VladAlbert",
+      "readme": "readme2.md"
     }
   ],
   "projects": [

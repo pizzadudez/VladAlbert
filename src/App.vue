@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <modal v-show="modalOpen" :file="modalFile"></modal>
     <navbar></navbar>
     <side-menu></side-menu>
     <router-view></router-view>
@@ -13,11 +14,28 @@
 </template>
 
 <script>
-import SideMenu from "@/components/SideMenu.vue";
-import Navbar from "@/components/Navbar.vue";
+import SideMenu from '@/components/SideMenu.vue';
+import Navbar from '@/components/Navbar.vue';
+import Modal from '@/components/Modal.vue';
 
 export default {
-  components: { SideMenu, Navbar }
+  components: { SideMenu, Navbar, Modal },
+  data() {
+    return {
+      modalOpen: false,
+      modalFile: null,
+    };
+  },
+  created() {
+    this.$root.$on('OPEN_MODAL', file => {
+      this.modalOpen = true;
+      this.modalFile = file;
+    });
+    this.$root.$on('CLOSE_MODAL', () => {
+      this.modalOpen = false;
+      this.modalFile = null;
+    });
+  },
 };
 </script>
 

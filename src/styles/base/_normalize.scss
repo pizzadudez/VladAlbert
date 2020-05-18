@@ -16,3 +16,9 @@ a {
     color: lighten($text-color, 30%);
   }
 }
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
