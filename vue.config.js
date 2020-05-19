@@ -1,3 +1,5 @@
+const Mode = require('frontmatter-markdown-loader/mode');
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -11,15 +13,27 @@ module.exports = {
   },
   chainWebpack: config => {
     config.module
-      .rule('md')
-      .test(/\.md/)
-      .use('vue-loader')
-      .loader('vue-loader')
-      .end()
-      .use('vue-markdown-loader')
-      .loader('vue-markdown-loader/lib/markdown-compiler')
-      .options({
-        raw: true,
+      .rule('markdown')
+      .test(/\.md$/)
+      .use('frontmatter-markdown-loader')
+      .loader('frontmatter-markdown-loader')
+      .tap(options => {
+        return {
+          mode: [Mode.VUE_COMPONENT],
+        };
       });
   },
+  // chainWebpack: config => {
+  //   config.module
+  //     .rule('md')
+  //     .test(/\.md/)
+  //     .use('vue-loader')
+  //     .loader('vue-loader')
+  //     .end()
+  //     .use('vue-markdown-loader')
+  //     .loader('vue-markdown-loader/lib/markdown-compiler')
+  //     .options({
+  //       raw: true,
+  //     });
+  // },
 };
