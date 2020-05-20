@@ -1,9 +1,16 @@
 <template>
   <div id="app">
-    <modal v-show="modalOpen" :file="modalFile"></modal>
+    <modal v-show="modalOpen" :project="projectName"></modal>
     <navbar></navbar>
     <side-menu></side-menu>
-    <router-view></router-view>
+    <main>
+      <div id="content">
+        <hero></hero>
+        <about></about>
+        <projects></projects>
+        <contact></contact>
+      </div>
+    </main>
     <footer>
       <div>&copy; 2020 Vlad Albert. All Rights Reserved.</div>
       <div>
@@ -18,28 +25,47 @@ import SideMenu from '@/components/SideMenu.vue';
 import Navbar from '@/components/Navbar.vue';
 import Modal from '@/components/Modal.vue';
 
+import Hero from '@/components/sections/Hero.vue';
+import Projects from '@/components/sections/Projects.vue';
+import About from '@/components/sections/About.vue';
+import Contact from '@/components/sections/Contact.vue';
+
 export default {
-  components: { SideMenu, Navbar, Modal },
+  components: { SideMenu, Navbar, Modal, Hero, Projects, About, Contact },
   data() {
     return {
       modalOpen: false,
-      modalFile: null,
+      projectName: null,
     };
   },
   created() {
-    this.$root.$on('OPEN_MODAL', file => {
+    this.$root.$on('OPEN_MODAL', projectName => {
       this.modalOpen = true;
-      this.modalFile = file;
+      this.projectName = projectName;
     });
     this.$root.$on('CLOSE_MODAL', () => {
       this.modalOpen = false;
-      this.modalFile = null;
+      this.projectName = null;
     });
   },
 };
 </script>
 
 <style scoped lang="scss">
+main {
+  min-height: 100vh;
+  #content {
+    padding: 0 200px;
+    section {
+      max-width: 1000px;
+      padding: 150px 0;
+      margin: 0px auto;
+    }
+    section:first-of-type {
+      min-height: 100vh;
+    }
+  }
+}
 footer {
   min-height: 80px;
   background-color: $bg-color-footer;

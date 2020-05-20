@@ -2,43 +2,53 @@
   <div class="featured">
     <div class="featured__info-container">
       <div class="featured__header">
-        <h2>{{project.name}}</h2>
+        <h2>{{ data.name }}</h2>
         <div class="featured__links">
-          <a v-if="project.github" :href="project.github" target="_blank">
+          <a v-if="data.github" :href="data.github" target="_blank">
             <dynamic-icon name="github"></dynamic-icon>
           </a>
-          <open-modal v-if="project.readme" :file="project.readme">
+          <open-modal v-if="data.readme" :project="project">
             <dynamic-icon name="readme"></dynamic-icon>
           </open-modal>
-          <a v-if="project.hosted" :href="project.hosted" target="_blank">
+          <a v-if="data.hosted" :href="data.hosted" target="_blank">
             <dynamic-icon name="hosted"></dynamic-icon>
           </a>
         </div>
       </div>
       <div class="featured__description">
-        <p>{{project.description}}</p>
+        <component :is="description"></component>
       </div>
       <ul>
-        <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
+        <li v-for="(tech, idx) in data.tech" :key="idx">{{ tech }}</li>
       </ul>
     </div>
-    <a class="featured__cover" :href="project.github" target="_blank">
+    <a class="featured__cover" :href="data.github" target="_blank">
       <div>
-        <img :src="require('@/content/projects/' + project.cover)" />
+        <img :src="require(`@/content/projects/${project}/${data.cover}`)" />
       </div>
     </a>
   </div>
 </template>
 
 <script>
-import { DynamicIcon } from "./icons";
-import OpenModal from "./OpenModal";
+import { DynamicIcon } from './icons';
+import OpenModal from './OpenModal';
 
 export default {
   components: { DynamicIcon, OpenModal },
   props: {
-    project: Object
-  }
+    project: String,
+  },
+  data() {
+    const {
+      vue,
+      attributes,
+    } = require(`@/content/projects/${this.project}/index.md`);
+    return {
+      data: attributes,
+      description: vue.component,
+    };
+  },
 };
 </script>
 
@@ -71,7 +81,7 @@ export default {
       }
     }
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;

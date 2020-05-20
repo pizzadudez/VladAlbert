@@ -1,9 +1,29 @@
+<script>
+import { featuredProjects, projects } from '@/config';
+import FeaturedProject from '../FeaturedProject';
+import Project from '../Project';
+
+export default {
+  components: { Project, FeaturedProject },
+  data() {
+    return {
+      featuredProjects,
+      projects,
+    };
+  },
+};
+</script>
+
 <template>
   <section id="projects">
     <h1 class="left-right">My projects</h1>
     <div class="featured">
-      <template v-for="(project, idx) in featured">
-        <featured-project :class="{inverse: idx % 2 == 1}" :project="project" :key="idx"></featured-project>
+      <template v-for="(project, idx) in featuredProjects">
+        <featured-project
+          :class="{ inverse: idx % 2 == 1 }"
+          :project="project"
+          :key="idx"
+        ></featured-project>
       </template>
     </div>
     <h2>Other projects worth mentioning:</h2>
@@ -14,22 +34,6 @@
     </div>
   </section>
 </template>
-
-<script>
-import { projects, featured } from "../../content";
-import FeaturedProject from "../FeaturedProject";
-import Project from "../Project";
-
-export default {
-  components: { Project, FeaturedProject },
-  data() {
-    return {
-      projects,
-      featured
-    };
-  }
-};
-</script>
 
 <style scoped lang="scss">
 h1 {

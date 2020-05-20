@@ -1,11 +1,11 @@
 <script>
 export default {
   props: {
-    file: String,
+    project: String,
   },
   methods: {
     openModal: function() {
-      this.$root.$emit('OPEN_MODAL', this.file);
+      this.$root.$emit('OPEN_MODAL', this.project);
     },
   },
 };

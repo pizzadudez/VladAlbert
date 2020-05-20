@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    file: String,
+    project: String,
   },
   data() {
     return {
@@ -15,15 +15,16 @@ export default {
     },
   },
   watch: {
-    file: function() {
-      if (!this.file) {
+    project: function() {
+      if (!this.project) {
         this.data = 'nothing';
         this.readme = null;
+        return;
       }
       const {
         vue,
         attributes,
-      } = require(`@/content/projects/readme/${this.file}`);
+      } = require(`@/content/projects/${this.project}/readme.md`);
       this.data = attributes.attr;
       this.readme = vue.component;
     },
@@ -36,7 +37,7 @@ export default {
     <div class="container">
       <button @click="closeModal">CLOSE ME</button>
       <h2>{{ this.data }}</h2>
-      <component v-if="file" :is="readme" class="markdown"></component>
+      <component v-if="project" :is="readme" class="markdown"></component>
     </div>
   </div>
 </template>
