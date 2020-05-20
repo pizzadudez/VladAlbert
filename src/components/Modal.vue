@@ -20,38 +20,14 @@ export default {
         this.data = 'nothing';
         this.readme = null;
       }
-      const markdown = require(`@/content/projects/readme/${this.file}`);
-      this.data = markdown.attributes.attr;
-      this.readme = markdown.vue.component;
+      const {
+        vue,
+        attributes,
+      } = require(`@/content/projects/readme/${this.file}`);
+      this.data = attributes.attr;
+      this.readme = vue.component;
     },
   },
-  // computed: {
-  //   markdownFile() {
-  //     if (!this.file) return null;
-  //     const markdown = require(`@/content/projects/readme/${this.file}`);
-  //     // this.data = markdown.attributes.attr;
-  //     return markdown.vue.component;
-  //   },
-  // },
-
-  // created() {
-  //   if (!this.file) return;
-  //   const markdown = require(`@/content/projects/readme/${this.file}`);
-  //   this.markdownFile = markdown.vue.component;
-  //   // this.markdownFile = import(`@/content/projects/readme/${this.file}`).then(({ vue }) => vue.component
-  // },
-  // computed: {
-  //   markdownFile() {
-  //     if (this.file) {
-  //       return () => {
-  //         const md = require(`@/content/projects/readme/${this.file}`);
-  //         debugger;
-  //         return md.fm.vue.component;
-  //       };
-  //     }
-  //     return null;
-  //   },
-  // },
 };
 </script>
 
@@ -60,7 +36,7 @@ export default {
     <div class="container">
       <button @click="closeModal">CLOSE ME</button>
       <h2>{{ this.data }}</h2>
-      <component v-if="file" :is="readme"></component>
+      <component v-if="file" :is="readme" class="markdown"></component>
     </div>
   </div>
 </template>
