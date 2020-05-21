@@ -1,34 +1,16 @@
-<template>
-  <section id="hero">
-    <h1>
-      Hello, I'm
-      <span>Vlad Albert</span>
-      .
-    </h1>
-    <h2>I'm a full stack web developer.</h2>
-    <div class="description">
-      <p>I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer</p>
-    </div>
-    <div class="nav">
-      <nav-button v-scroll-to="'#about'">About</nav-button>
-      <nav-button v-scroll-to="'#projects'">Projects</nav-button>
-      <nav-button @click.native="openSideMenu()">Contact</nav-button>
-      <nav-button>Resume</nav-button>
-    </div>
-    <transition name="fade">
-      <scroll-arrows v-if="showScrollArrows" v-scroll-to="'#about'"></scroll-arrows>
-    </transition>
-  </section>
-</template>
-
 <script>
 import NavButton from "../NavButton";
 import ScrollArrows from "../ScrollArrows";
+import { links } from "@/config";
+import { vue, attributes } from "@/content/hero.md";
 
 export default {
   components: { NavButton, ScrollArrows },
   data() {
     return {
+      data: attributes,
+      description: vue.component,
+      links,
       showScrollArrows: true
     };
   },
@@ -47,7 +29,33 @@ export default {
 };
 </script>
 
+<template>
+  <section id="hero">
+    <h1>
+      {{data.title}}
+      <span>{{data.name}}</span>
+      .
+    </h1>
+    <h2>{{data.subtitle}}</h2>
+    <component class="description" :is="description"></component>
+    <div class="nav">
+      <nav-button v-scroll-to="'#about'">About</nav-button>
+      <nav-button v-scroll-to="'#projects'">Projects</nav-button>
+      <nav-button @click.native="openSideMenu()">Contact</nav-button>
+      <a :href="links.resume" target="_blank" rel="nofollow noopener noreferrer">
+        <nav-button>Resume</nav-button>
+      </a>
+    </div>
+    <transition name="fade">
+      <scroll-arrows v-if="showScrollArrows" v-scroll-to="'#about'"></scroll-arrows>
+    </transition>
+  </section>
+</template>
+
 <style scoped lang="scss">
+#hero >>> .description >>> p {
+  background: pink;
+}
 section {
   position: relative;
   display: flex;
@@ -66,7 +74,7 @@ section {
     font-size: 4rem;
     color: $text-white;
   }
-  .description p {
+  ::v-deep .description p {
     margin-top: 1.8rem;
     max-width: 600px;
     font-size: 1.5rem;

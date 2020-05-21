@@ -1,8 +1,17 @@
 <script>
 import NavButton from "../NavButton";
+import { email } from "@/config";
+import { vue, attributes } from "@/content/contact.md";
 
 export default {
-  components: { NavButton }
+  components: { NavButton },
+  data() {
+    return {
+      email,
+      content: vue.component,
+      buttonText: attributes.button
+    };
+  }
 };
 </script>
 
@@ -10,9 +19,10 @@ export default {
   <section id="contact">
     <h1 class="left-right">Contact</h1>
     <div class="contact__content">
-      <p>I'm always interested about cool stuff. Are you minding a project?</p>
-      <p>Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-      <nav-button class="contact__button">Lets talk!</nav-button>
+      <component :is="content"></component>
+      <a :href="`mailto:${email}`">
+        <nav-button class="contact__button">{{buttonText}}</nav-button>
+      </a>
     </div>
   </section>
 </template>

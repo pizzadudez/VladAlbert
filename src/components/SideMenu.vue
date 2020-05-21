@@ -1,41 +1,13 @@
-<template>
-  <div class="side">
-    <ul :class="{emphasize: emphasize}">
-      <li>
-        <a href="https://www.vladalbert.com/" target="_blank">
-          <span>Github</span>
-          <dynamic-icon name="github"></dynamic-icon>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.vladalbert.com/" target="_blank">
-          <span>Linkedin</span>
-          <dynamic-icon name="linkedin"></dynamic-icon>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.vladalbert.com/" target="_blank">
-          <span>E-mail</span>
-          <dynamic-icon name="mail"></dynamic-icon>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.vladalbert.com/" target="_blank">
-          <span>Resume</span>
-          <dynamic-icon name="resume"></dynamic-icon>
-        </a>
-      </li>
-    </ul>
-  </div>
-</template>
-
 <script>
 import { DynamicIcon } from "./icons";
+import { links, email } from "@/config";
 
 export default {
   components: { DynamicIcon },
   data() {
     return {
+      links,
+      email,
       emphasize: false
     };
   },
@@ -49,6 +21,37 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div class="side">
+    <ul :class="{emphasize: emphasize}">
+      <li>
+        <a :href="links.github" target="_blank" rel="nofollow noopener noreferrer">
+          <span>Github</span>
+          <dynamic-icon name="github"></dynamic-icon>
+        </a>
+      </li>
+      <li>
+        <a :href="links.linkedin" target="_blank" rel="nofollow noopener noreferrer">
+          <span>Linkedin</span>
+          <dynamic-icon name="linkedin"></dynamic-icon>
+        </a>
+      </li>
+      <li>
+        <a :href="`mailto:${email}`" target="_blank" rel="nofollow noopener noreferrer">
+          <span>E-mail</span>
+          <dynamic-icon name="mail"></dynamic-icon>
+        </a>
+      </li>
+      <li>
+        <a :href="links.resume" target="_blank" rel="nofollow noopener noreferrer">
+          <span>Resume</span>
+          <dynamic-icon name="resume"></dynamic-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .side {

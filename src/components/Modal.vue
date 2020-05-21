@@ -1,34 +1,34 @@
 <script>
 export default {
   props: {
-    project: String,
+    projectName: String
   },
   data() {
     return {
-      data: 'nothing',
-      readme: null,
+      data: "nothing",
+      readme: null
     };
   },
   methods: {
     closeModal: function() {
-      this.$root.$emit('CLOSE_MODAL');
-    },
+      this.$root.$emit("CLOSE_MODAL");
+    }
   },
   watch: {
-    project: function() {
-      if (!this.project) {
-        this.data = 'nothing';
+    projectName: function() {
+      if (!this.projectName) {
+        this.data = "nothing";
         this.readme = null;
         return;
       }
       const {
         vue,
-        attributes,
-      } = require(`@/content/projects/${this.project}/readme.md`);
+        attributes
+      } = require(`@/content/projects/${this.projectName}/readme.md`);
       this.data = attributes.attr;
       this.readme = vue.component;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -37,7 +37,7 @@ export default {
     <div class="container">
       <button @click="closeModal">CLOSE ME</button>
       <h2>{{ this.data }}</h2>
-      <component v-if="project" :is="readme" class="markdown"></component>
+      <component v-if="projectName" :is="readme" class="markdown"></component>
     </div>
   </div>
 </template>

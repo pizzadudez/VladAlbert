@@ -4,13 +4,23 @@
       <div class="featured__header">
         <h2>{{ data.name }}</h2>
         <div class="featured__links">
-          <a v-if="data.github" :href="data.github" target="_blank">
+          <a
+            v-if="data.github"
+            :href="data.github"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
             <dynamic-icon name="github"></dynamic-icon>
           </a>
-          <open-modal v-if="data.readme" :project="project">
+          <open-modal v-if="data.readme" :projectName="projectName">
             <dynamic-icon name="readme"></dynamic-icon>
           </open-modal>
-          <a v-if="data.hosted" :href="data.hosted" target="_blank">
+          <a
+            v-if="data.hosted"
+            :href="data.hosted"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
             <dynamic-icon name="hosted"></dynamic-icon>
           </a>
         </div>
@@ -22,33 +32,38 @@
         <li v-for="(tech, idx) in data.tech" :key="idx">{{ tech }}</li>
       </ul>
     </div>
-    <a class="featured__cover" :href="data.github" target="_blank">
+    <a
+      class="featured__cover"
+      :href="data.github"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+    >
       <div>
-        <img :src="require(`@/content/projects/${project}/${data.cover}`)" />
+        <img :src="require(`@/content/projects/${projectName}/${data.cover}`)" />
       </div>
     </a>
   </div>
 </template>
 
 <script>
-import { DynamicIcon } from './icons';
-import OpenModal from './OpenModal';
+import { DynamicIcon } from "./icons";
+import OpenModal from "./OpenModal";
 
 export default {
   components: { DynamicIcon, OpenModal },
   props: {
-    project: String,
+    projectName: String
   },
   data() {
     const {
       vue,
-      attributes,
-    } = require(`@/content/projects/${this.project}/index.md`);
+      attributes
+    } = require(`@/content/projects/${this.projectName}/index.md`);
     return {
       data: attributes,
-      description: vue.component,
+      description: vue.component
     };
-  },
+  }
 };
 </script>
 
@@ -81,7 +96,7 @@ export default {
       }
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;

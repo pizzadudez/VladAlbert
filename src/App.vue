@@ -1,6 +1,39 @@
+<script>
+import SideMenu from "@/components/SideMenu.vue";
+import Navbar from "@/components/Navbar.vue";
+import Modal from "@/components/Modal.vue";
+
+import Hero from "@/components/sections/Hero.vue";
+import Projects from "@/components/sections/Projects.vue";
+import About from "@/components/sections/About.vue";
+import Contact from "@/components/sections/Contact.vue";
+import { email } from "@/config";
+
+export default {
+  components: { SideMenu, Navbar, Modal, Hero, Projects, About, Contact },
+  data() {
+    return {
+      email,
+      modalOpen: false,
+      projectName: null
+    };
+  },
+  created() {
+    this.$root.$on("OPEN_MODAL", projectName => {
+      this.modalOpen = true;
+      this.projectName = projectName;
+    });
+    this.$root.$on("CLOSE_MODAL", () => {
+      this.modalOpen = false;
+      this.projectName = null;
+    });
+  }
+};
+</script>
+
 <template>
   <div id="app">
-    <modal v-show="modalOpen" :project="projectName"></modal>
+    <modal v-show="modalOpen" :projectName="projectName"></modal>
     <navbar></navbar>
     <side-menu></side-menu>
     <main>
@@ -14,42 +47,11 @@
     <footer>
       <div>&copy; 2020 Vlad Albert. All Rights Reserved.</div>
       <div>
-        <a href="mailto:itsvladalbert@gmail.com">itsvladalbert@gmail.com</a>
+        <a :href="`mailto:${email}`">{{email}}</a>
       </div>
     </footer>
   </div>
 </template>
-
-<script>
-import SideMenu from '@/components/SideMenu.vue';
-import Navbar from '@/components/Navbar.vue';
-import Modal from '@/components/Modal.vue';
-
-import Hero from '@/components/sections/Hero.vue';
-import Projects from '@/components/sections/Projects.vue';
-import About from '@/components/sections/About.vue';
-import Contact from '@/components/sections/Contact.vue';
-
-export default {
-  components: { SideMenu, Navbar, Modal, Hero, Projects, About, Contact },
-  data() {
-    return {
-      modalOpen: false,
-      projectName: null,
-    };
-  },
-  created() {
-    this.$root.$on('OPEN_MODAL', projectName => {
-      this.modalOpen = true;
-      this.projectName = projectName;
-    });
-    this.$root.$on('CLOSE_MODAL', () => {
-      this.modalOpen = false;
-      this.projectName = null;
-    });
-  },
-};
-</script>
 
 <style scoped lang="scss">
 main {

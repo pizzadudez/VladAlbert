@@ -1,16 +1,16 @@
 <script>
-import { featuredProjects, projects } from '@/config';
-import FeaturedProject from '../FeaturedProject';
-import Project from '../Project';
+import FeaturedProject from "../FeaturedProject";
+import Project from "../Project";
+import { featuredProjects, projects } from "@/config";
 
 export default {
   components: { Project, FeaturedProject },
   data() {
     return {
       featuredProjects,
-      projects,
+      projects
     };
-  },
+  }
 };
 </script>
 
@@ -18,18 +18,14 @@ export default {
   <section id="projects">
     <h1 class="left-right">My projects</h1>
     <div class="featured">
-      <template v-for="(project, idx) in featuredProjects">
-        <featured-project
-          :class="{ inverse: idx % 2 == 1 }"
-          :project="project"
-          :key="idx"
-        ></featured-project>
+      <template v-for="(projectName, idx) in featuredProjects">
+        <featured-project :class="{ inverse: idx % 2 == 1 }" :projectName="projectName" :key="idx"></featured-project>
       </template>
     </div>
     <h2>Other projects worth mentioning:</h2>
     <div class="projects">
-      <template v-for="(project, idx) in projects">
-        <project :project="project" :key="idx"></project>
+      <template v-for="(projectName, idx) in projects">
+        <project :projectName="projectName" :key="idx"></project>
       </template>
     </div>
   </section>

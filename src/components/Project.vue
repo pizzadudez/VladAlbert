@@ -3,22 +3,35 @@
     <div class="project__content">
       <div class="project__title">
         <dynamic-icon name="repo"></dynamic-icon>
-        <h2>{{project.name}}</h2>
+        <h2>{{data.name}}</h2>
       </div>
       <ul class="project__tech-list">
-        <li v-for="(tech, idx) in project.tech" :key="idx">{{tech}}</li>
+        <li v-for="(tech, idx) in data.tech" :key="idx">{{tech}}</li>
       </ul>
       <div class="project__description">
-        <p>{{project.description}}</p>
+        <component :is="description"></component>
       </div>
     </div>
     <div class="project__overlay">
-      <h2>{{project.name}}</h2>
+      <h2>{{data.name}}</h2>
       <div class="project__links">
-        <a v-if="project.github" :href="project.github" target="_blank">
+        <a
+          v-if="data.github"
+          :href="data.github"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
           <dynamic-icon name="github"></dynamic-icon>
         </a>
-        <a v-if="project.hosted" :href="project.hosted" target="_blank">
+        <open-modal v-if="data.readme" :projectName="projectName">
+          <dynamic-icon name="readme"></dynamic-icon>
+        </open-modal>
+        <a
+          v-if="data.hosted"
+          :href="data.hosted"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
           <dynamic-icon name="hosted"></dynamic-icon>
         </a>
       </div>
@@ -28,11 +41,22 @@
 
 <script>
 import { DynamicIcon } from "./icons";
+import OpenModal from "./OpenModal";
 
 export default {
-  components: { DynamicIcon },
+  components: { DynamicIcon, OpenModal },
   props: {
-    project: Object
+    projectName: String
+  },
+  data() {
+    const {
+      vue,
+      attributes
+    } = require(`@/content/projects/${this.projectName}/index.md`);
+    return {
+      data: attributes,
+      description: vue.component
+    };
   }
 };
 </script>
@@ -114,7 +138,8 @@ export default {
   }
   &__links {
     display: flex;
-    a {
+    a,
+    button {
       svg {
         margin: 0 10px;
         height: 3rem;
