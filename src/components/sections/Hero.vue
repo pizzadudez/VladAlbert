@@ -11,7 +11,8 @@ export default {
       data: attributes,
       description: vue.component,
       links,
-      showScrollArrows: true
+      showScrollArrows: true,
+      loading: true
     };
   },
   methods: {
@@ -31,21 +32,29 @@ export default {
 
 <template>
   <section id="hero">
-    <h1>
-      {{data.title}}
-      <span>{{data.name}}</span>
-      .
-    </h1>
-    <h2>{{data.subtitle}}</h2>
-    <component class="description" :is="description"></component>
-    <div class="nav">
-      <nav-button v-scroll-to="'#about'">About</nav-button>
-      <nav-button v-scroll-to="'#projects'">Projects</nav-button>
-      <nav-button @click.native="openSideMenu()">Contact</nav-button>
-      <a :href="links.resume" target="_blank" rel="nofollow noopener noreferrer">
-        <nav-button>Resume</nav-button>
-      </a>
-    </div>
+    <transition name="reveal" appear>
+      <h1>
+        {{ data.title }}
+        <span>{{ data.name }}</span>
+        .
+      </h1>
+    </transition>
+    <transition name="reveal" appear>
+      <h2 style="transition-delay: 150ms">{{ data.subtitle }}</h2>
+    </transition>
+    <transition name="reveal" appear>
+      <component class="description" :is="description" style="transition-delay: 300ms"></component>
+    </transition>
+    <transition name="reveal-right" appear>
+      <div class="nav" style="transition-delay: 700ms">
+        <nav-button v-scroll-to="'#about'">About</nav-button>
+        <nav-button v-scroll-to="'#projects'">Projects</nav-button>
+        <nav-button @click.native="openSideMenu()">Contact</nav-button>
+        <a :href="links.resume" target="_blank" rel="nofollow noopener noreferrer">
+          <nav-button>Resume</nav-button>
+        </a>
+      </div>
+    </transition>
     <transition name="fade">
       <scroll-arrows v-if="showScrollArrows" v-scroll-to="'#about'"></scroll-arrows>
     </transition>
@@ -53,9 +62,6 @@ export default {
 </template>
 
 <style scoped lang="scss">
-#hero >>> .description >>> p {
-  background: pink;
-}
 section {
   position: relative;
   display: flex;

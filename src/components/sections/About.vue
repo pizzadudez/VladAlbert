@@ -1,6 +1,7 @@
 <script>
 import { DynamicIcon } from "../icons";
 import { vue, attributes } from "@/content/about.md";
+import sr from "@/utils/sr";
 
 export default {
   components: { DynamicIcon },
@@ -9,20 +10,29 @@ export default {
       data: attributes,
       about: vue.component
     };
+  },
+  mounted() {
+    sr.reveal(this.$refs.about, sr.options.fadeDown());
+    sr.reveal(this.$refs.stack, sr.options.fadeDown());
+    for (let i = 0; i < this.$refs.tech.length; i++) {
+      sr.reveal(this.$refs.tech[i], sr.options.fadeRight(200 + i * 60));
+    }
   }
 };
 </script>
 
 <template>
   <section id="about">
-    <div class="about">
+    <div class="about" ref="about">
       <h1 class="left">About me</h1>
       <component :is="about"></component>
     </div>
-    <div class="stack">
+    <div class="stack" ref="stack">
       <h1 class="right">Tech stack</h1>
       <div>
-        <dynamic-icon v-for="(tech, idx) in data.technologies" :name="tech" :key="idx"></dynamic-icon>
+        <div v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
+          <dynamic-icon :name="tech"></dynamic-icon>
+        </div>
       </div>
     </div>
   </section>

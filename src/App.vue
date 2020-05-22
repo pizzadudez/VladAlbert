@@ -47,7 +47,7 @@ export default {
     <footer>
       <div>&copy; 2020 Vlad Albert. All Rights Reserved.</div>
       <div>
-        <a :href="`mailto:${email}`">{{email}}</a>
+        <a :href="`mailto:${email}`">{{ email }}</a>
       </div>
     </footer>
   </div>
