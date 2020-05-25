@@ -1,5 +1,5 @@
 <template>
-  <div class="featured">
+  <div class="featured" ref="featuredProject">
     <div class="featured__info-container">
       <div class="featured__header">
         <h2>{{ data.name }}</h2>
@@ -48,6 +48,7 @@
 <script>
 import { DynamicIcon } from "./icons";
 import OpenModal from "./OpenModal";
+import sr from "@/utils/sr";
 
 export default {
   components: { DynamicIcon, OpenModal },
@@ -63,6 +64,9 @@ export default {
       data: attributes,
       description: vue.component
     };
+  },
+  mounted() {
+    sr.reveal(this.$refs.featuredProject, sr.options.fadeUp());
   }
 };
 </script>

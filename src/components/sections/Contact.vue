@@ -2,6 +2,7 @@
 import NavButton from "../NavButton";
 import { email } from "@/config";
 import { vue, attributes } from "@/content/contact.md";
+import sr from "@/utils/sr";
 
 export default {
   components: { NavButton },
@@ -11,14 +12,18 @@ export default {
       content: vue.component,
       buttonText: attributes.button
     };
+  },
+  mounted() {
+    sr.reveal(this.$refs.title, sr.options.grow());
+    sr.reveal(this.$refs.content, sr.options.fadeUp(500));
   }
 };
 </script>
 
 <template>
   <section id="contact">
-    <h1 class="left-right">Contact</h1>
-    <div class="contact__content">
+    <h1 class="left-right" ref="title">Contact</h1>
+    <div class="contact__content" ref="content">
       <component :is="content"></component>
       <a :href="`mailto:${email}`">
         <nav-button class="contact__button">{{buttonText}}</nav-button>

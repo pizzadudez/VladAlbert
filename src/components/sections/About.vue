@@ -12,10 +12,12 @@ export default {
     };
   },
   mounted() {
-    sr.reveal(this.$refs.about, sr.options.fadeDown());
-    sr.reveal(this.$refs.stack, sr.options.fadeDown());
+    sr.reveal(this.$refs.titleAbout, sr.options.fadeLeft());
+    sr.reveal(".about__content", sr.options.fadeUp(300));
+    sr.reveal(this.$refs.titleTech, sr.options.fadeRight());
+
     for (let i = 0; i < this.$refs.tech.length; i++) {
-      sr.reveal(this.$refs.tech[i], sr.options.fadeRight(200 + i * 60));
+      sr.reveal(this.$refs.tech[i], sr.options.fadeLeft(200 + i * 50));
     }
   }
 };
@@ -23,15 +25,15 @@ export default {
 
 <template>
   <section id="about">
-    <div class="about" ref="about">
-      <h1 class="left">About me</h1>
-      <component :is="about"></component>
+    <div class="about">
+      <h1 class="left" ref="titleAbout">About me</h1>
+      <component class="about__content" :is="about"></component>
     </div>
-    <div class="stack" ref="stack">
-      <h1 class="right">Tech stack</h1>
+    <div class="tech">
+      <h1 class="right" ref="titleTech">Tech stack</h1>
       <div>
         <div v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
-          <dynamic-icon :name="tech"></dynamic-icon>
+          <dynamic-icon class="tech__icon" :name="tech"></dynamic-icon>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@ section {
 .about {
   margin-top: 70px;
 }
-.stack {
+.tech {
   > div {
     display: flex;
     flex-wrap: wrap;

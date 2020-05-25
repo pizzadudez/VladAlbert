@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <div class="project" ref="project">
     <div class="project__content">
       <div class="project__title">
         <dynamic-icon name="repo"></dynamic-icon>
@@ -42,6 +42,7 @@
 <script>
 import { DynamicIcon } from "./icons";
 import OpenModal from "./OpenModal";
+import sr from "@/utils/sr";
 
 export default {
   components: { DynamicIcon, OpenModal },
@@ -57,6 +58,9 @@ export default {
       data: attributes,
       description: vue.component
     };
+  },
+  mounted() {
+    sr.reveal(this.$refs.project, sr.options.fadeRight(300));
   }
 };
 </script>

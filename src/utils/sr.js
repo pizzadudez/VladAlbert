@@ -4,7 +4,7 @@ const sr = ScrollReveal();
 
 const sharedOptions = {
   origin: 'bottom',
-  distance: '20px',
+  distance: '0px',
   duration: 500,
   rotate: { x: 0, y: 0, z: 0 },
   opacity: 0,
@@ -18,15 +18,28 @@ const sharedOptions = {
 };
 
 sr.options = {
-  fadeDown: (delay = 200) => ({
+  fadeUp: (delay = 200) => ({
     ...sharedOptions,
     delay,
     origin: 'bottom',
+    distance: '20px',
   }),
   fadeRight: (delay = 200) => ({
     ...sharedOptions,
     delay,
     origin: 'right',
+    distance: '20px',
+  }),
+  fadeLeft: (delay = 200) => ({
+    ...sharedOptions,
+    delay,
+    origin: 'left',
+    distance: '20px',
+  }),
+  grow: (delay = 200) => ({
+    ...sharedOptions,
+    delay,
+    scale: 0.9,
   }),
 };
 

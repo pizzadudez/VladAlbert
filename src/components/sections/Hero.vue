@@ -32,21 +32,21 @@ export default {
 
 <template>
   <section id="hero">
-    <transition name="reveal" appear>
-      <h1>
+    <transition name="fade-down" appear>
+      <h1 style="transition-delay: 300ms">
         {{ data.title }}
         <span>{{ data.name }}</span>
         .
       </h1>
     </transition>
-    <transition name="reveal" appear>
-      <h2 style="transition-delay: 150ms">{{ data.subtitle }}</h2>
+    <transition name="fade-down" appear>
+      <h2 style="transition-delay: 450ms">{{ data.subtitle }}</h2>
     </transition>
-    <transition name="reveal" appear>
-      <component class="description" :is="description" style="transition-delay: 300ms"></component>
+    <transition name="fade-down" appear>
+      <component class="description" :is="description" style="transition-delay: 600ms"></component>
     </transition>
-    <transition name="reveal-right" appear>
-      <div class="nav" style="transition-delay: 700ms">
+    <transition name="fade-right" appear>
+      <div class="nav" style="transition-delay: 800ms">
         <nav-button v-scroll-to="'#about'">About</nav-button>
         <nav-button v-scroll-to="'#projects'">Projects</nav-button>
         <nav-button @click.native="openSideMenu()">Contact</nav-button>
@@ -55,8 +55,12 @@ export default {
         </a>
       </div>
     </transition>
-    <transition name="fade">
-      <scroll-arrows v-if="showScrollArrows" v-scroll-to="'#about'"></scroll-arrows>
+    <transition name="fade" appear>
+      <scroll-arrows
+        v-show="showScrollArrows"
+        style="transition-delay: 1000ms"
+        v-scroll-to="'#about'"
+      ></scroll-arrows>
     </transition>
   </section>
 </template>
