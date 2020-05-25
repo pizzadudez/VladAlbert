@@ -1,4 +1,22 @@
-.reveal-enter-active {
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.fade-leave-active {
+  &.modal__root {
+    margin-right: -10px;
+  }
+}
+
+.fade-enter- .reveal-enter-active {
   opacity: 0.01;
   transform: translateY(20px);
   transition: opacity 0.3s, transform 2.3s;

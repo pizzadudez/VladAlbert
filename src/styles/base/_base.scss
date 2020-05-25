@@ -4,9 +4,15 @@ html {
 body {
   height: 100%;
   box-sizing: border-box;
-
   background: $bg-color-primary;
   color: $text-lightGray;
+  &.modal-open {
+    overflow: hidden;
+    padding-right: 10px;
+    .navbar {
+      padding-right: 10px;
+    }
+  }
 
   svg {
     display: block;

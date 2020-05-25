@@ -64,7 +64,8 @@ export default {
   background-color: $bg-color-primary;
   box-shadow: $box-shadow;
   height: 60px;
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+    box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   ul {
     display: flex;

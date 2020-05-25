@@ -22,10 +22,11 @@ export default {
     this.$root.$on("OPEN_MODAL", projectName => {
       this.modalOpen = true;
       this.projectName = projectName;
+      document.body.classList.add("modal-open");
     });
     this.$root.$on("CLOSE_MODAL", () => {
       this.modalOpen = false;
-      this.projectName = null;
+      document.body.classList.remove("modal-open");
     });
   }
 };

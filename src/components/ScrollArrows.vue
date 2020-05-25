@@ -7,7 +7,7 @@ export default {};
     <span></span>
     <span></span>
     <span></span>
-    <p>scroll down</p>
+    <p>Scroll</p>
   </a>
 </template>
 
@@ -23,7 +23,7 @@ a {
   cursor: pointer;
   p {
     color: $text-gray;
-    margin-top: 4em;
+    margin-top: 4.3em;
     font-size: 0.4em;
     opacity: 0.5;
   }

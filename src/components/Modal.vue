@@ -33,31 +33,54 @@ export default {
 </script>
 
 <template>
-  <div class="modal">
-    <div class="container">
-      <button @click="closeModal">CLOSE ME</button>
-      <h2>{{ this.data }}</h2>
-      <component v-if="projectName" :is="readme" class="markdown"></component>
+  <transition name="fade">
+    <div class="modal__root">
+      <div class="modal__backdrop"></div>
+      <div class="modal__container" @click.self="closeModal">
+        <div class="modal__content">
+          <button @click="closeModal">CLOSE ME</button>
+          <h2>{{ this.data }}</h2>
+          <component v-if="projectName" :is="readme" class="markdown"></component>
+        </div>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <style scoped lang="scss">
 .modal {
-  position: fixed;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 500px;
-  width: 500px;
-  background-color: white;
-}
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: $bg-color-secondary;
+  &__root {
+    position: fixed;
+    z-index: 800;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__backdrop {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__content {
+    @include PaperContainer;
+    max-height: calc(100vh - 10%);
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background: $bg-color-secondary;
+    padding: 10px;
+    margin: 18px;
+  }
 }
 </style>
