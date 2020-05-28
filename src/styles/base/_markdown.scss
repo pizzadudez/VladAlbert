@@ -1,4 +1,13 @@
 .markdown {
+  padding: 10px;
+  overflow: auto;
+  background-color: $bg-color-primary;
+  ol,
+  ul {
+    padding-inline-start: 20px;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+  }
   img {
     width: 100%;
   }

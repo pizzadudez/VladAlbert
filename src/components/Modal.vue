@@ -1,11 +1,16 @@
 <script>
+import { DynamicIcon } from "./icons";
+
 export default {
+  components: {
+    DynamicIcon
+  },
   props: {
     projectName: String
   },
   data() {
     return {
-      data: "nothing",
+      data: "",
       readme: null
     };
   },
@@ -17,7 +22,7 @@ export default {
   watch: {
     projectName: function() {
       if (!this.projectName) {
-        this.data = "nothing";
+        this.data = "";
         this.readme = null;
         return;
       }
@@ -25,7 +30,7 @@ export default {
         vue,
         attributes
       } = require(`@/content/projects/${this.projectName}/readme.md`);
-      this.data = attributes.attr;
+      this.data = attributes;
       this.readme = vue.component;
     }
   }
@@ -38,8 +43,13 @@ export default {
       <div class="modal__backdrop"></div>
       <div class="modal__container" @click.self="closeModal">
         <div class="modal__content">
-          <button @click="closeModal">CLOSE ME</button>
-          <h2>{{ this.data }}</h2>
+          <header>
+            <div class="modal__title">
+              <dynamic-icon name="readme"></dynamic-icon>
+              <h1>{{ this.data.name && 'Addons for World of Warcraft and a long title'}}</h1>
+            </div>
+            <dynamic-icon class="modal__close" name="cross" @click.native="closeModal"></dynamic-icon>
+          </header>
           <component v-if="projectName" :is="readme" class="markdown"></component>
         </div>
       </div>
@@ -75,12 +85,46 @@ export default {
   &__content {
     @include PaperContainer;
     max-height: calc(100vh - 10%);
-    max-width: 900px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     background: $bg-color-secondary;
-    padding: 10px;
+    padding: 0;
     margin: 18px;
   }
+  &__title {
+    display: flex;
+    align-items: center;
+    h1 {
+      color: $text-gray;
+      margin: 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    svg {
+      flex-shrink: 0;
+      height: 40px;
+      width: 40px;
+      fill: currentColor;
+    }
+  }
+  &__close {
+    fill: lightsalmon;
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.45s $transition-bounce;
+    &:hover {
+      transform: scale(1.15);
+      fill: darken(lightsalmon, 10%);
+    }
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 </style>

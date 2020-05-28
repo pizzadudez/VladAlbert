@@ -1,3 +1,5 @@
+export { default as cross } from './cross';
+
 export { default as github } from './github';
 export { default as linkedin } from './linkedin';
 export { default as mail } from './mail';

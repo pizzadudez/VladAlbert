@@ -19,7 +19,7 @@ module.exports = {
       .loader('frontmatter-markdown-loader')
       .tap(options => {
         return {
-          mode: [Mode.VUE_COMPONENT],
+          mode: [Mode.VUE_COMPONENT, Mode.BODY],
         };
       });
   },
