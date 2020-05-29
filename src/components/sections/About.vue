@@ -32,8 +32,8 @@ export default {
     <div class="tech">
       <h1 class="right" ref="titleTech">Tech stack</h1>
       <div>
-        <div v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
-          <dynamic-icon class="tech__icon" :name="tech"></dynamic-icon>
+        <div class="tech__icon" v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
+          <dynamic-icon :name="tech"></dynamic-icon>
         </div>
       </div>
     </div>
@@ -55,14 +55,16 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  svg {
-    display: block;
-    padding: 20px;
-    width: 130px;
-    height: 130px;
-    transition: all 0.4s $transition-bounce;
-    &:hover {
-      padding: 0;
+  &__icon {
+    margin: 10px;
+    svg {
+      display: block;
+      width: 90px;
+      height: 90px;
+      transition: all 0.4s $transition-bounce;
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 }

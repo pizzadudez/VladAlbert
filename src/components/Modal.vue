@@ -95,6 +95,7 @@ export default {
   &__title {
     display: flex;
     align-items: center;
+    min-width: 0;
     h1 {
       color: $text-gray;
       margin: 0 10px;
