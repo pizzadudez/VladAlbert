@@ -26,11 +26,11 @@ export default {
 <template>
   <section id="about">
     <div class="about">
-      <h1 class="left" ref="titleAbout">About me</h1>
+      <!-- <h1 class="left" ref="titleAbout">About me</h1> -->
       <component class="about__content" :is="about"></component>
     </div>
     <div class="tech">
-      <h1 class="right" ref="titleTech">Tech stack</h1>
+      <!-- <h1 class="right" ref="titleTech">Tech stack</h1> -->
       <div>
         <div class="tech__icon" v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
           <dynamic-icon :name="tech"></dynamic-icon>
@@ -43,7 +43,7 @@ export default {
 <style scoped lang="scss">
 section {
   display: grid;
-  grid-template-columns: minmax(400px, 500px) minmax(200px, 400px);
+  grid-template-columns: 1fr 1fr;
   column-gap: 50px;
 }
 .about {

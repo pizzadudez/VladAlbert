@@ -45,7 +45,7 @@ export default {
     <transition name="fade-down" appear>
       <component class="description" :is="description" style="transition-delay: 600ms"></component>
     </transition>
-    <transition name="fade-right" appear>
+    <!-- <transition name="fade-right" appear>
       <div class="nav" style="transition-delay: 800ms">
         <nav-button v-scroll-to="'#about'">About</nav-button>
         <nav-button v-scroll-to="'#projects'">Projects</nav-button>
@@ -54,7 +54,7 @@ export default {
           <nav-button>Resume</nav-button>
         </a>
       </div>
-    </transition>
+    </transition>-->
     <transition name="fade" appear>
       <scroll-arrows
         v-show="showScrollArrows"

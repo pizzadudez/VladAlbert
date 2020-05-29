@@ -10,7 +10,7 @@ import Contact from "@/components/sections/Contact.vue";
 import { email } from "@/config";
 
 export default {
-  components: { SideMenu, Navbar, Modal, Hero, Projects, About, Contact },
+  components: { SideMenu, Navbar, Modal, Hero, Projects, Contact },
   data() {
     return {
       email,
@@ -40,7 +40,7 @@ export default {
     <main>
       <div id="content">
         <hero></hero>
-        <about></about>
+        <!-- <about></about> -->
         <projects></projects>
         <contact></contact>
       </div>
@@ -58,7 +58,7 @@ export default {
 main {
   min-height: 100vh;
   #content {
-    padding: 0 200px;
+    padding: 0 50px;
     section {
       max-width: 1000px;
       padding: 150px 0;
