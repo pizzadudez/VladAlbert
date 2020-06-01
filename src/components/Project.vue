@@ -67,7 +67,7 @@ export default {
 
 <style scoped lang="scss">
 .project {
-  @include PaperContainer;
+  @include paper-container;
   position: relative;
   padding: 1.1rem;
   overflow: hidden;

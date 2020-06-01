@@ -1,6 +1,23 @@
-@mixin PaperContainer {
+@mixin paper-container {
   box-shadow: $box-shadow;
   border-radius: 3px;
   padding: 0.9rem;
   background-color: $bg-color-secondary;
+}
+
+// breakpoints
+@mixin media-desktop {
+  @media (max-width: 62.5em) {
+    @content;
+  }
+}
+@mixin media-tablet {
+  @media (max-width: 48em) {
+    @content;
+  }
+}
+@mixin media-phone {
+  @media (max-width: 23.5em) {
+    @content;
+  }
 }

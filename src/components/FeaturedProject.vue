@@ -160,7 +160,7 @@ export default {
     }
   }
   &__description {
-    @include PaperContainer;
+    @include paper-container;
     p {
       margin: 0;
       padding: 2px;

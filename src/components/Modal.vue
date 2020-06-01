@@ -83,7 +83,7 @@ export default {
     justify-content: center;
   }
   &__content {
-    @include PaperContainer;
+    @include paper-container;
     max-height: calc(100vh - 10%);
     max-width: 800px;
     display: flex;
