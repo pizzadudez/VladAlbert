@@ -59,6 +59,10 @@ export default {
   top: 65%;
   left: -98px;
   transform: translateY(-50%);
+  z-index: 999;
+  @include media-tablet {
+    display: none;
+  }
 
   ul {
     list-style: none;

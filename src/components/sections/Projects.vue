@@ -42,16 +42,24 @@ h1 {
   margin-bottom: 5rem;
 }
 h2 {
-  font-size: 2.4rem;
   color: $text-gray;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
+  @include media-tablet {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  @include media-phone {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
 }
 .featured {
   margin-bottom: 150px;
 }
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 16px;
 }
 </style>

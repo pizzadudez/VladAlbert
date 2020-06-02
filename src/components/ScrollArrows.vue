@@ -21,6 +21,9 @@ a {
   align-items: center;
   font-size: 3rem;
   cursor: pointer;
+  @include media-tablet {
+    display: none;
+  }
   p {
     color: $text-gray;
     margin-top: 4.3em;

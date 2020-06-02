@@ -36,7 +36,6 @@ export default {
       <h1 style="transition-delay: 300ms">
         {{ data.title }}
         <span>{{ data.name }}</span>
-        .
       </h1>
     </transition>
     <transition name="fade-down" appear>
@@ -45,7 +44,7 @@ export default {
     <transition name="fade-down" appear>
       <component class="description" :is="description" style="transition-delay: 600ms"></component>
     </transition>
-    <!-- <transition name="fade-right" appear>
+    <transition name="fade-right" appear>
       <div class="nav" style="transition-delay: 800ms">
         <nav-button v-scroll-to="'#about'">About</nav-button>
         <nav-button v-scroll-to="'#projects'">Projects</nav-button>
@@ -54,7 +53,7 @@ export default {
           <nav-button>Resume</nav-button>
         </a>
       </div>
-    </transition>-->
+    </transition>
     <transition name="fade" appear>
       <scroll-arrows
         v-show="showScrollArrows"
@@ -74,22 +73,52 @@ section {
   min-height: 100vh;
   h1 {
     font-size: 4rem;
+    @include media-tablet {
+      font-size: 3.3rem;
+      margin-bottom: 0.5rem;
+    }
+    @include media-phone {
+      font-size: 2.4rem;
+    }
     color: $text-white;
     span {
       font-size: 5.5rem;
+      @include media-tablet {
+        font-size: 3.7rem;
+      }
+      @include media-phone {
+        font-size: 2.7rem;
+      }
       color: $text-color;
+      white-space: nowrap;
     }
   }
   h2 {
-    font-size: 4rem;
+    font-size: 3.4rem;
+    @include media-tablet {
+      font-size: 2.4rem;
+    }
+    @include media-phone {
+      font-size: 2rem;
+    }
     color: $text-white;
   }
   ::v-deep .description p {
     margin-top: 1.8rem;
     max-width: 600px;
     font-size: 1.5rem;
+    @include media-tablet {
+      font-size: 1.2rem;
+      margin-top: 0.4rem;
+    }
+    @include media-phone {
+      font-size: 1rem;
+    }
   }
   .nav {
+    @include media-tablet {
+      display: none;
+    }
     margin-top: 2rem;
     display: flex;
     button {

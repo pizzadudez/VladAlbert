@@ -10,7 +10,7 @@ import Contact from "@/components/sections/Contact.vue";
 import { email } from "@/config";
 
 export default {
-  components: { SideMenu, Navbar, Modal, Hero, Contact },
+  components: { SideMenu, Navbar, Modal, Hero, About, Projects, Contact },
   data() {
     return {
       email,
@@ -40,8 +40,8 @@ export default {
     <div id="content">
       <main>
         <hero></hero>
-        <!-- <about></about> -->
-        <!-- <projects></projects> -->
+        <about></about>
+        <projects></projects>
         <contact></contact>
       </main>
       <footer>
@@ -88,6 +88,9 @@ export default {
     background-color: $bg-color-footer;
     > * {
       margin: 6px 12px;
+      @include media-phone {
+        margin: 6px 0;
+      }
     }
     div {
       color: $text-gray;

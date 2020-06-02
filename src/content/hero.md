@@ -1,7 +1,8 @@
 ---
 title: Hello, I'm
 name: Vlad Albert
-subtitle: I'm a full stack web developer.
+subtitle: I design and build web apps.
 ---
 
-I'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developerI'm a full stack web developer.
+I'm a *full stack software developer* based in Romania, specializing in creating well designed websites and applications.
+
