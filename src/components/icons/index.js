@@ -11,6 +11,7 @@ export { default as readme } from './readme';
 
 export { default as nodejs } from './nodejs';
 export { default as react } from './react';
+export { default as redux } from './redux';
 export { default as vue } from './vue';
 export { default as sass } from './sass';
 export { default as javascript } from './javascript';

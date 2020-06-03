@@ -1,25 +1,26 @@
 ---
 technologies:
     - react
+    - redux
     - javascript
     - nodejs
     - vue
+    - sass
     - python
     - django
-    - sass
     - css3
     - html5
     - postgres
     - mysql
 ---
 
-Hey there! My name is Vlad Albert and I'm a full stack web developer and UI/UX enthusiast.
+Hey there! My name is Vlad Albert, I'm a full stack web developer and UI/UX enthusiast.
 
-I'm a problem solver and a big picture thinker. This makes me very passionate about building apps with vital and/or innovative functionality for end users.
+I'm very passionate about building robust apps, with practical and innovative functionalities for the end users. At the core I'm a problem solver and a big picture thinker. 
 
 What I enjoy most is bringing ideas into reality and the whole creative process behind it (from *designing databases* to *CSS animations* and everything inbetween).
 
-If you want to know more about my technical skills check out my <a href="https://www.vladalbert.com/" target="_blank">resume</a>.
+If you want to know more technical details about my skills check out my <a href="https://www.vladalbert.com/" target="_blank">resume</a>.
 
 <!-- 
 Altough my primary focus is on busines logic and component interactivity I also like to dabble in design and UI/UX

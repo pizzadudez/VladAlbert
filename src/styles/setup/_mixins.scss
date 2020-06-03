@@ -6,6 +6,11 @@
 }
 
 // breakpoints
+@mixin media-large {
+  @media (min-width: 62.5625em) {
+    @content;
+  }
+}
 @mixin media-desktop {
   @media (max-width: 62.5em) {
     @content;
@@ -18,11 +23,6 @@
 }
 @mixin media-phone {
   @media (max-width: 23.5em) {
-    @content;
-  }
-}
-@mixin media-large {
-  @media (min-width: 62.5625em) {
     @content;
   }
 }

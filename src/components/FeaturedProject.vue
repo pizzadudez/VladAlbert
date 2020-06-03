@@ -3,7 +3,7 @@
     <div class="featured__info-container">
       <div class="featured__header">
         <h2>{{ data.name }}</h2>
-        <div class="featured__links">
+        <div class="featured__links" style="display:none">
           <a
             v-if="data.github"
             :href="data.github"

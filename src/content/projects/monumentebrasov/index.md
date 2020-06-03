@@ -1,10 +1,11 @@
 ---
 name: 'Monumente Brasov'
 tech:
-    - Python
-    - Pandas
-    - SQL
+    - HTML
+    - CSS
+    - Bootstrap
+    - jQuery
 hosted: https://monumentebrasov.vladalbert.com/
 ---
 
-Website I designed and made for a client. Learned how to use Bootstrap and JQuery.
+Website I designed and made for a client. Learned how to use Bootstrap and jQuery.

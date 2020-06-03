@@ -31,7 +31,7 @@ export default {
     </div>
     <div class="tech">
       <h1 class="right" ref="titleTech">Tech stack</h1>
-      <div>
+      <div class="tech__grid">
         <div class="tech__icon" v-for="(tech, idx) in data.technologies" :key="idx" ref="tech">
           <dynamic-icon :name="tech"></dynamic-icon>
         </div>
@@ -43,7 +43,7 @@ export default {
 <style scoped lang="scss">
 #about {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(230px, 1fr);
+  grid-template-columns: minmax(300px, 7fr) minmax(230px, 5fr);
   column-gap: 30px;
   @include media-large {
     column-gap: 50px;
@@ -58,20 +58,38 @@ export default {
   margin-top: 70px;
 }
 .tech {
-  > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    column-gap: 1.8rem;
+    row-gap: 1.8rem;
+    @include media-phone {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+      column-gap: 1rem;
+      row-gap: 1rem;
+    }
+    justify-content: center;
+    justify-items: center;
   }
   &__icon {
-    margin: 10px;
+    max-width: 95px;
+    @include media-phone {
+      max-width: 65px;
+    }
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
     svg {
-      display: block;
-      width: 90px;
-      height: 90px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
       transition: all 0.4s $transition-bounce;
       &:hover {
-        transform: scale(1.3);
+        transform: scale(1.25);
       }
     }
   }
