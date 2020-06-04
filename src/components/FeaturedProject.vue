@@ -1,9 +1,9 @@
 <template>
   <div class="featured" ref="featuredProject">
-    <div class="featured__info-container">
+    <div class="featured__info-container" ref="info">
       <div class="featured__header">
         <h2>{{ data.name }}</h2>
-        <div class="featured__links" style="display:none">
+        <div class="featured__links">
           <a
             v-if="data.github"
             :href="data.github"
@@ -67,6 +67,7 @@ export default {
   },
   mounted() {
     sr.reveal(this.$refs.featuredProject, sr.options.fadeUp());
+    sr.reveal(this.$refs.info, sr.options.fadeUp(900));
   }
 };
 </script>
@@ -75,13 +76,17 @@ export default {
 .featured {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   align-items: center;
   gap: 6px;
   &__cover {
     position: relative;
     grid-column: 6 / -1;
     grid-row: 1 / -1;
-    /* position: relative; */
+    @include media-phablet {
+      grid-column: 2 / -1;
+      grid-row: 2 / -1;
+    }
     overflow: hidden;
     border-radius: 4px;
     box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
@@ -111,6 +116,9 @@ export default {
       z-index: 1;
       background-color: rgba(221, 189, 100, 0.13);
       transition: background-color 0.4s;
+      @include media-phablet {
+        display: none;
+      }
     }
 
     div {
@@ -132,6 +140,9 @@ export default {
         top: 0;
         left: 0; */
         filter: grayscale(70%) contrast(1) brightness(80%);
+        @include media-phablet {
+          filter: opacity(0.3);
+        }
         transition: all 0.3s;
         z-index: 3;
         &:hover,
@@ -143,6 +154,9 @@ export default {
   }
   &__info-container {
     grid-column: 1 / 7;
+    @include media-phablet {
+      grid-column: 1 / 11;
+    }
     grid-row: 1 / -1;
     z-index: 2;
     ul {
@@ -153,6 +167,9 @@ export default {
       gap: 8px;
       li {
         color: $text-gray;
+        @include media-phablet {
+          color: $text-white;
+        }
         font-size: 0.9rem;
         margin: 4px 12px 0 0;
         white-space: nowrap;
@@ -161,9 +178,12 @@ export default {
   }
   &__description {
     @include paper-container;
-    p {
+
+    ::v-deep p {
       margin: 0;
-      padding: 2px;
+    }
+    @include media-phablet {
+      padding: 0.6rem;
     }
   }
   &__header {
@@ -201,9 +221,15 @@ export default {
   .featured {
     &__cover {
       grid-column: 1 / 8;
+      @include media-phablet {
+        grid-column: 1 / 12;
+      }
     }
     &__info-container {
       grid-column: 7 / -1;
+      @include media-phablet {
+        grid-column: 2 / -1;
+      }
       h2 {
         text-align: right;
       }

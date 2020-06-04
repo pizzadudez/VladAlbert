@@ -4,7 +4,7 @@ tech:
     - Python
     - Pandas
     - SQL
-readme: true
+readme: false
 ---
 
 Data parsing, analysis and implementing two way data transfer between local .lua files and local/remote databases.

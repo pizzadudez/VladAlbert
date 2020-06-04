@@ -73,6 +73,7 @@ section {
   min-height: 100vh;
   h1 {
     font-size: 4rem;
+    margin-bottom: 1rem;
     @include media-tablet {
       font-size: 3.3rem;
       margin-bottom: 0.5rem;
@@ -108,11 +109,11 @@ section {
     max-width: 600px;
     font-size: 1.5rem;
     @include media-tablet {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin-top: 0.4rem;
     }
     @include media-phone {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
   .nav {
