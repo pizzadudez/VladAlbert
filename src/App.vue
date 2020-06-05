@@ -1,6 +1,6 @@
 <script>
+import Navigation from "@/components/sections/Navigation.vue";
 import SideMenu from "@/components/SideMenu.vue";
-import Navbar from "@/components/Navbar.vue";
 import Modal from "@/components/Modal.vue";
 
 import Hero from "@/components/sections/Hero.vue";
@@ -10,7 +10,7 @@ import Contact from "@/components/sections/Contact.vue";
 import { email } from "@/config";
 
 export default {
-  components: { SideMenu, Navbar, Modal, Hero, About, Projects, Contact },
+  components: { SideMenu, Navigation, Modal, Hero, About, Projects, Contact },
   data() {
     return {
       email,
@@ -35,7 +35,7 @@ export default {
 <template>
   <div id="app">
     <modal v-show="modalOpen" :projectName="projectName"></modal>
-    <navbar></navbar>
+    <navigation></navigation>
     <side-menu></side-menu>
     <div id="content">
       <main>

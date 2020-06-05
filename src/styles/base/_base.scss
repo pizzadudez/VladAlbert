@@ -14,6 +14,15 @@ body {
       padding-right: $scrollbar-width;
     }
   }
+  @include media-tablet {
+    &.modal-open {
+      overflow: hidden;
+      padding-right: 0;
+      .navbar {
+        padding-right: 0;
+      }
+    }
+  }
 
   svg {
     display: block;
