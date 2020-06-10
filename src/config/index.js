@@ -3,7 +3,8 @@ module.exports = {
   links: {
     github: 'https://github.com/pizzadudez',
     linkedin: 'https://linkedin.com/in/vlad-albert-14a601193/',
-    resume: 'https://vladalbert.com/',
+    resume:
+      'https://drive.google.com/file/d/1AWQzQlmFRhuOhep60cHnCllIKe7QqnBc/view?usp=sharing',
   },
   featuredProjects: ['moodmusic', 'tradingui', 'myah'],
   projects: [
