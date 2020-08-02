@@ -34,7 +34,7 @@
     </div>
     <a
       class="featured__cover"
-      :href="data.github"
+      :href="data.hosted || data.github"
       target="_blank"
       rel="nofollow noopener noreferrer"
     >

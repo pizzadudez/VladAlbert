@@ -8,6 +8,7 @@ tech:
   - MaterialUI
 cover: 'moodmusic.png'
 github: 'https://github.com/pizzadudez/MoodMusic'
+hosted: 'https://moodmusic.vladalbert.com'
 readme: false
 ---
 
