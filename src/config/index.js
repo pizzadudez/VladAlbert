@@ -8,6 +8,7 @@ module.exports = {
   },
   featuredProjects: ['moodmusic', 'tradingui', 'myah'],
   projects: [
+    'wow-setup',
     'realmhop',
     'portfolio',
     'foodpandascraper',
